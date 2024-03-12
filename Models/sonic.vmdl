@@ -738,6 +738,28 @@
 								take = 0
 								reverse = false
 							},
+							{
+								_class = "AnimFile"
+								name = "SonicJumpDLoopS"
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = true
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								enable_scale = false
+								source_filename = "Animations/SonicJumpDLoopS.fbx"
+								start_frame = -1
+								end_frame = -1
+								framerate = -1.0
+								take = 0
+								reverse = false
+							},
 						]
 					},
 				]
