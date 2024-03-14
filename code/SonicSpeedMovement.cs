@@ -5,24 +5,38 @@ using Sandbox.VR;
 public sealed class SonicSpeedMovement : Component
 {
 	[Property] public float Speed;
+	[Property] public float MinSpeed;
 	[Property] public float Run;
-	[Property] public float CurrentSpeed;
+	[Property] public float MinRun;
 	[Property] public float JumpHighet;
 	[Property] public float Spin;
 	[Property] public CitizenAnimationHelper Anim;
 	[Property] public CharacterController controller;
 	[Property] public CameraComponent cam;
 	[Property] bool movementenable;
+	bool momentum;
 
 	public Angles EyeAngles {  get; set; }
 
 	protected override void OnStart()
 	{
 		movementenable = true;
+		Run = MinRun;
 	}
 
 	protected override void OnUpdate()
 	{
+		if ( momentum )
+		{
+			Run += Time.Delta * 10;
+			Speed += Time.Delta * 10;
+			cam.FieldOfView += Time.Delta;
+			if ( cam.FieldOfView > 130 )
+			{
+				cam.FieldOfView = 130;
+			}
+		}
+
 		EyeAngles += Input.AnalogLook;
 		Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
 		if ( Input.Down( "Duck" ) )
@@ -30,6 +44,11 @@ public sealed class SonicSpeedMovement : Component
 			//animation here
 			Anim.TriggerJump();
 			movementenable = false;
+			cam.FieldOfView -= Time.Delta * 10;
+			if ( cam.FieldOfView < 30 )
+			{
+				cam.FieldOfView = 30;
+			}
 		}
 		else if( Input.Released( "Duck" ) )
 		{
@@ -44,6 +63,9 @@ public sealed class SonicSpeedMovement : Component
 			Anim.TriggerJump();
 
 			movementenable = true;
+			cam.FieldOfView = 90;
+			Run += 300;
+			Speed += 400;
 		}
 
 	}
@@ -57,18 +79,20 @@ public sealed class SonicSpeedMovement : Component
 			if ( controller == null ) return;
 
 			var wishSpeed = Input.Down( "Run" ) ? Run : Speed;
+			if( Input.AnalogMove != 0 )
+			{
+				momentum = true;
+			}
+			else
+			{
+				momentum = false;
+				Run = MinRun;
+				Speed = MinSpeed;
+				cam.FieldOfView = 90;
+			}
 			var wishVelocity = Input.AnalogMove * wishSpeed * Transform.Rotation;
 
 			float ogrunvalue = Run;
-
-			if ( Input.Down( "Run" ) )
-			{
-				//cam.FieldOfView = 120;
-			}
-			else if ( Input.Released( "Run" ) )
-			{
-				cam.FieldOfView = 90;
-			}
 
 			controller.Accelerate( wishVelocity );
 
@@ -85,7 +109,6 @@ public sealed class SonicSpeedMovement : Component
 					if ( Anim != null )
 						Anim.TriggerJump();
 				}
-				cam.FieldOfView = 90;
 				Scene.TimeScale = 1f;
 			}
 			else

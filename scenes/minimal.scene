@@ -1,8 +1,8 @@
 {
-  "Id": "9f832399-4887-46b0-8f21-2ee284f538e2",
+  "__guid": "9f832399-4887-46b0-8f21-2ee284f538e2",
   "GameObjects": [
     {
-      "Id": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
+      "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
       "Name": "Sun",
       "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
       "Tags": "light_directional,light",
@@ -11,6 +11,7 @@
       "Components": [
         {
           "__type": "DirectionalLight",
+          "__guid": "2911bbac-437a-4b1a-b8b2-b2078063dccf",
           "FogMode": "Enabled",
           "FogStrength": 1,
           "LightColor": "0.94419,0.97767,1,1",
@@ -20,7 +21,7 @@
       ]
     },
     {
-      "Id": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
+      "__guid": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
       "Name": "2D Skybox",
       "Tags": "skybox",
       "Enabled": true,
@@ -28,11 +29,13 @@
       "Components": [
         {
           "__type": "SkyBox2D",
+          "__guid": "37f6c7e5-4068-4444-a169-ac4a8648810b",
           "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "EnvmapProbe",
+          "__guid": "3d792e76-6393-4005-b755-4c1e824a9485",
           "Bounds": {
             "Mins": "-512,-512,-512",
             "Maxs": "512,512,512"
@@ -45,7 +48,7 @@
       ]
     },
     {
-      "Id": "6ad70641-3c6c-4402-9c85-9a4969af4764",
+      "__guid": "6ad70641-3c6c-4402-9c85-9a4969af4764",
       "Name": "Plane",
       "Scale": "48.79708,48.79708,48.79708",
       "Enabled": true,
@@ -53,6 +56,7 @@
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "6c6a2d7d-d745-49aa-808a-ca8bed0d8f22",
           "BodyGroups": 18446744073709551615,
           "MaterialOverride": "materials/default.vmat",
           "Model": "models/dev/plane.vmdl",
@@ -61,6 +65,7 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "dd8e709b-fb9a-458e-bdc4-e7c87917e8cb",
           "Center": "0,0,-5",
           "IsTrigger": false,
           "Scale": "100,100,10",
@@ -69,7 +74,7 @@
       ]
     },
     {
-      "Id": "3c2490ef-54a0-49bb-8f13-490e40aa51d1",
+      "__guid": "3c2490ef-54a0-49bb-8f13-490e40aa51d1",
       "Name": "Cube",
       "Position": "21.41682,74.1244,14.40159",
       "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
@@ -79,6 +84,7 @@
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "cb89c874-1237-4f07-b95b-0675e274be8a",
           "BodyGroups": 18446744073709551615,
           "MaterialOverride": "materials/default.vmat",
           "Model": "models/dev/box.vmdl",
@@ -87,6 +93,7 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "b300a138-4280-4520-90a4-785f9810076c",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -94,18 +101,20 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "f7c269b5-d4a6-4028-865b-13799f65a609",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
           "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
     },
     {
-      "Id": "523e3e8f-a4ec-4ec1-af9a-d86ffc9c17e1",
+      "__guid": "523e3e8f-a4ec-4ec1-af9a-d86ffc9c17e1",
       "Name": "Cube (1)",
       "Position": "40.81348,46.97572,14.40159",
       "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
@@ -115,6 +124,7 @@
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "a4eb332d-d5ac-447e-a51f-e4bbb7d9cfc5",
           "BodyGroups": 18446744073709551615,
           "MaterialOverride": "materials/default.vmat",
           "Model": "models/dev/box.vmdl",
@@ -123,6 +133,7 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "342d2dcd-222b-42a1-9cec-9d0e8f840bc9",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -130,18 +141,20 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "41a5eddc-3135-4000-8dad-bcc6874e8b19",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
           "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
     },
     {
-      "Id": "5b483a09-bbf2-4949-98c7-a73b789d0ee7",
+      "__guid": "5b483a09-bbf2-4949-98c7-a73b789d0ee7",
       "Name": "Cube (2)",
       "Position": "49.53707,34.08896,43.67614",
       "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
@@ -151,6 +164,7 @@
       "Components": [
         {
           "__type": "ModelRenderer",
+          "__guid": "62f3e77e-4e05-4ee6-8d6a-87b95d60c4dc",
           "BodyGroups": 18446744073709551615,
           "MaterialOverride": "materials/default.vmat",
           "Model": "models/dev/box.vmdl",
@@ -159,6 +173,7 @@
         },
         {
           "__type": "BoxCollider",
+          "__guid": "bbd1b070-9b34-42f5-a122-cc4377d93f68",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -166,18 +181,20 @@
         },
         {
           "__type": "Rigidbody",
+          "__guid": "32d671c3-31ff-441d-a18e-6d842585d699",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
           "MassOverride": 0,
+          "MotionEnabled": true,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
       ]
     },
     {
-      "Id": "5ba6db07-aa87-4f9f-b78c-3b76ecec29df",
+      "__guid": "5ba6db07-aa87-4f9f-b78c-3b76ecec29df",
       "Name": "Player",
       "Position": "-10.30246,38.31794,5.430781",
       "Enabled": true,
@@ -185,6 +202,7 @@
       "Components": [
         {
           "__type": "SkinnedModelRenderer",
+          "__guid": "4f4622d5-7ba1-49b9-85bf-c06845d8fcd0",
           "BodyGroups": 341,
           "CreateBoneObjects": false,
           "Model": "models/citizen/citizen.vmdl",
@@ -193,6 +211,7 @@
         },
         {
           "__type": "CitizenAnimationHelper",
+          "__guid": "a9127c23-ffa5-4e7d-b78f-5f11108d8e97",
           "BodyWeight": 1,
           "EyesWeight": 1,
           "HeadWeight": 1,
@@ -200,12 +219,14 @@
           "LookAtEnabled": false,
           "Target": {
             "_type": "component",
+            "component_id": "4f4622d5-7ba1-49b9-85bf-c06845d8fcd0",
             "go": "5ba6db07-aa87-4f9f-b78c-3b76ecec29df",
             "component_type": "SkinnedModelRenderer"
           }
         },
         {
           "__type": "CharacterController",
+          "__guid": "ba14493a-dac9-48b3-843d-83160e72d17b",
           "Acceleration": 10,
           "Bounciness": 0.3,
           "GroundAngle": 45,
@@ -216,32 +237,49 @@
         },
         {
           "__type": "SonicSpeedMovement",
+          "__guid": "ba9b805e-a46d-4da5-ab21-a2ff4eceae51",
           "Anim": {
             "_type": "component",
+            "component_id": "a9127c23-ffa5-4e7d-b78f-5f11108d8e97",
             "go": "5ba6db07-aa87-4f9f-b78c-3b76ecec29df",
             "component_type": "CitizenAnimationHelper"
           },
           "cam": {
             "_type": "component",
+            "component_id": "4c8fa2f8-cd72-44b8-88ec-9827e583d3aa",
             "go": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
             "component_type": "CameraComponent"
           },
           "controller": {
             "_type": "component",
+            "component_id": "ba14493a-dac9-48b3-843d-83160e72d17b",
             "go": "5ba6db07-aa87-4f9f-b78c-3b76ecec29df",
             "component_type": "CharacterController"
           },
-          "CurrentSpeed": 0,
           "JumpHighet": 1000,
+          "MinRun": 800,
           "movementenable": false,
           "Run": 800,
-          "Speed": 600,
+          "Speed": 250,
           "Spin": 300000
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "6aaf7778-245b-47af-82ad-7ea17540472d",
+          "Center": "0,0,29",
+          "IsTrigger": false,
+          "Scale": "12.29999,16.40001,70.20003",
+          "Static": false
+        },
+        {
+          "__type": "CoinManager",
+          "__guid": "6c567a92-a532-45f5-8136-b03a7cc4f81c",
+          "Coins": 0
         }
       ],
       "Children": [
         {
-          "Id": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
+          "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
           "Name": "Camera",
           "Position": "-151.356,-10.99184,73.52535",
           "Rotation": "0,0.1305262,0,0.9914449",
@@ -250,6 +288,7 @@
           "Components": [
             {
               "__type": "CameraComponent",
+              "__guid": "4c8fa2f8-cd72-44b8-88ec-9827e583d3aa",
               "BackgroundColor": "0.33333,0.46275,0.52157,1",
               "ClearFlags": "All",
               "FieldOfView": 60,
@@ -266,6 +305,7 @@
             },
             {
               "__type": "Bloom",
+              "__guid": "c0c1d4c0-bcfc-4445-acf1-768de56687c6",
               "BloomColor": {
                 "color": [
                   {
@@ -294,6 +334,7 @@
             },
             {
               "__type": "Tonemapping",
+              "__guid": "503d14a3-2a69-460f-bac8-1a6d336546e9",
               "ExposureCompensation": 0,
               "MaximumExposure": 2,
               "MinimumExposure": 1,
@@ -301,9 +342,47 @@
             },
             {
               "__type": "Sharpen",
+              "__guid": "01d4d2f9-bd37-43f8-9216-2b3af886940c",
               "Scale": 0.2
             }
           ]
+        }
+      ]
+    },
+    {
+      "__guid": "04c51dfb-2a8e-4ffc-aada-5d2a74694a92",
+      "Name": "Coin",
+      "Position": "0,-31.58887,24.43916",
+      "Scale": "0.1911199,0.1911199,0.1911199",
+      "Tags": "coin",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "c96aba47-9ce0-4cb7-84b6-360527ac99a1",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "834010d1-2fe6-4926-91a1-d86f5602609a",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Coin",
+          "__guid": "4459db42-686d-4c7e-b932-ea0c3acdf614",
+          "coinMaster": {
+            "_type": "component",
+            "component_id": "6c567a92-a532-45f5-8136-b03a7cc4f81c",
+            "go": "5ba6db07-aa87-4f9f-b78c-3b76ecec29df",
+            "component_type": "CoinManager"
+          }
         }
       ]
     }
@@ -331,6 +410,8 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-12T22:00:05.0842845\u002B02:00",
+  "LastSaved": "2024-03-14T20:44:54.4360755\u002B02:00",
+  "ResourceVersion": 1,
+  "__version": 1,
   "__references": []
 }
