@@ -17,7 +17,7 @@ public enum UnitType
 	/// The enemy :-(
 	/// </summary>
 	[Icon( "filter_drama" )]
-	Snot
+	Badnic
 }
 
 [Icon( "psychology" )]
