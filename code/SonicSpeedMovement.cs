@@ -57,33 +57,36 @@ public sealed class SonicSpeedMovement : Component
 
 		EyeAngles += Input.AnalogLook;
 		Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
-		if ( Input.Down( "Duck" ) )
+		if ( controller.IsOnGround )
 		{
-			//animation here
-			Anim.TriggerJump();
-			movementenable = false;
-			cam.FieldOfView -= Time.Delta * 10;
-			if ( cam.FieldOfView < 30 )
+			if ( Input.Down( "Duck" ) )
 			{
-				cam.FieldOfView = 30;
+				//animation here
+				Anim.TriggerJump();
+				movementenable = false;
+				cam.FieldOfView -= Time.Delta * 10;
+				if ( cam.FieldOfView < 30 )
+				{
+					cam.FieldOfView = 30;
+				}
 			}
-		}
-		else if( Input.Released( "Duck" ) )
-		{
-			//cam.FieldOfView = 120;
-			if ( controller == null ) return;
+			else if ( Input.Released( "Duck" ) )
+			{
+				//cam.FieldOfView = 120;
+				if ( controller == null ) return;
 
-			var wishVelocity = Vector3.Forward * Spin * Transform.Rotation;
+				var wishVelocity = Vector3.Forward * Spin * Transform.Rotation;
 
-			controller.Accelerate( wishVelocity );
+				controller.Accelerate( wishVelocity );
 
-			controller.Move();
-			Anim.TriggerJump();
+				controller.Move();
+				Anim.TriggerJump();
 
-			movementenable = true;
-			cam.FieldOfView = 90;
-			Run += 300;
-			Speed += 400;
+				movementenable = true;
+				cam.FieldOfView = 90;
+				Run += 300;
+				Speed += 400;
+			}
 		}
 
 	}
