@@ -28,8 +28,8 @@ public sealed class SonicSpeedMovement : Component
 	{
 		if ( momentum )
 		{
-			Run += Time.Delta * 10;
-			Speed += Time.Delta * 10;
+			Run += Time.Delta * 50;
+			Speed += Time.Delta * 50;
 			cam.FieldOfView += Time.Delta;
 			if ( cam.FieldOfView > 130 )
 			{

@@ -50,7 +50,7 @@
     {
       "__guid": "6ad70641-3c6c-4402-9c85-9a4969af4764",
       "Name": "Plane",
-      "Scale": "48.79708,48.79708,48.79708",
+      "Scale": "1449.354,1449.354,1449.354",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -258,6 +258,7 @@
           },
           "JumpHighet": 1000,
           "MinRun": 800,
+          "MinSpeed": 250,
           "movementenable": false,
           "Run": 800,
           "Speed": 250,
@@ -410,7 +411,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-14T20:44:54.4360755\u002B02:00",
+  "LastSaved": "2024-03-15T10:07:30.3872056\u002B02:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
