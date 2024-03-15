@@ -162,11 +162,13 @@ public sealed class SonicSpeedMovement : Component
 	}
 	public void Punch()
 	{
-
-		if ( Anim != null )
+		if ( controller.IsOnGround )
 		{
-			Anim.HoldType = CitizenAnimationHelper.HoldTypes.Punch;
-			Anim.Target.Set( "b_attack", true );
+			if ( Anim != null )
+			{
+				Anim.HoldType = CitizenAnimationHelper.HoldTypes.Punch;
+				Anim.Target.Set( "b_attack", true );
+			}
 		}
 
 		var punchTrace = Scene.Trace
