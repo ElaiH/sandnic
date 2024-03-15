@@ -16,7 +16,7 @@ public sealed class SonicSpeedMovement : Component
 	[Property] public CameraComponent cam;
 	[Property] bool movementenable;
 	[Property]public float PunchStrength { get; set; } = 1f;
-	[Property]public float PunchCooldown { get; set; } = 0.5f;
+	//[Property]public float PunchCooldown { get; set; } = 0.5f;
 	[Property]public float PunchRange { get; set; } = 50f;
 	[Property]
 	public Vector3 EyePosition { get; set; }
@@ -170,7 +170,7 @@ public sealed class SonicSpeedMovement : Component
 				if ( _lastPunch >= 2f )
 					Anim.HoldType = CitizenAnimationHelper.HoldTypes.None;
 			}
-			if ( Input.Pressed( "Punch" ) && _lastPunch >= PunchCooldown )
+			if ( Input.Pressed( "Punch" )) //&& _lastPunch >= PunchCooldown )
 				Punch();
 		}
 	}
