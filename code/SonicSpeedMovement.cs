@@ -16,7 +16,7 @@ public sealed class SonicSpeedMovement : Component
 	[Property] public CameraComponent cam;
 	[Property] bool movementenable;
 	[Property]public float PunchStrength { get; set; } = 1f;
-	public float PunchCooldown { get; set; } = 0.5f;
+	[Property]public float PunchCooldown { get; set; } = 0.5f;
 	[Property]public float PunchRange { get; set; } = 50f;
 	[Property]
 	public Vector3 EyePosition { get; set; }
@@ -88,6 +88,19 @@ public sealed class SonicSpeedMovement : Component
 				Speed += 400;
 			}
 		}
+		var punchTrace = Scene.Trace
+			.FromTo( EyeWorldPosition, EyeWorldPosition + EyeAngles.Forward * PunchRange )
+			.Size( 10f )
+			.WithoutTags( "player" )
+			.IgnoreGameObjectHierarchy( GameObject )
+			.Run();
+
+		if ( punchTrace.Hit )
+			if ( punchTrace.GameObject.Components.TryGet<UnitInfo>( out var unitInfo ) )
+			{
+				Log.Info( "Hit" );
+				Scene.TimeScale = 0.1f;
+			}
 
 	}
 
@@ -95,6 +108,7 @@ public sealed class SonicSpeedMovement : Component
 	{
 		if ( movementenable )
 		{
+
 			base.OnFixedUpdate();
 
 			if ( controller == null ) return;
@@ -184,6 +198,12 @@ public sealed class SonicSpeedMovement : Component
 				unitInfo.Damage( PunchStrength );
 				Log.Info( "Hit" );
 				GameObject.Transform.Position = punchTrace.GameObject.Transform.Position;
+				var wishVelocity = Vector3.Up * 800;
+
+				controller.Accelerate( wishVelocity );
+				var gg = Vector3.Forward * 700;
+
+				controller.Accelerate( gg );
 			}
 
 		_lastPunch = 0f;

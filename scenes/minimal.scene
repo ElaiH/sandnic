@@ -196,8 +196,7 @@
     {
       "__guid": "a3eabe85-31b4-4aa5-9b43-90d136a1e08a",
       "Name": "Cube (3)",
-      "Position": "49.53706,34.08899,602.4786",
-      "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
+      "Position": "49.53706,34.08899,424.3235",
       "Scale": "0.5632889,0.5632889,0.5632889",
       "Enabled": true,
       "NetworkMode": 2,
@@ -222,6 +221,78 @@
         {
           "__type": "UnitInfo",
           "__guid": "0e7e91b6-76a6-4898-82bc-dddfb365665a",
+          "DelayDeath": 0,
+          "HealthRegenAmount": 0.5,
+          "HealthRegenTimer": 3,
+          "MaxHealth": 5,
+          "Team": "Badnic"
+        }
+      ]
+    },
+    {
+      "__guid": "8f475c12-fd84-40b0-92ac-c3eee3f9f4ed",
+      "Name": "Cube (4)",
+      "Position": "250.1724,-38.55294,592.8508",
+      "Scale": "0.5632889,0.5632889,0.5632889",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "2507ae78-7cae-453f-9158-8a5b9a979693",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/default.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,0,0.93333,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "6b6be3a7-726c-432f-86a1-03ff3912124e",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "UnitInfo",
+          "__guid": "ae7a3ae6-8988-45d7-aff8-8422d75ea38f",
+          "DelayDeath": 0,
+          "HealthRegenAmount": 0.5,
+          "HealthRegenTimer": 3,
+          "MaxHealth": 5,
+          "Team": "Badnic"
+        }
+      ]
+    },
+    {
+      "__guid": "20bd0aaa-82a4-4115-8726-a93681151e7d",
+      "Name": "Cube (5)",
+      "Position": "421.8822,-134.4333,518.2866",
+      "Scale": "0.5632889,0.5632889,0.5632889",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "54d7983b-73f0-4420-a9aa-4be867eda17f",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/default.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,0,0.93333,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "ac080ab5-41f3-455c-9a50-a74de9e9565f",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "UnitInfo",
+          "__guid": "bc34c9a4-0516-460c-b074-5b7183a384e6",
           "DelayDeath": 0,
           "HealthRegenAmount": 0.5,
           "HealthRegenTimer": 3,
@@ -301,6 +372,7 @@
           "Speed": 250,
           "Spin": 300000,
           "EyePosition": "0,0,61.09997",
+          "PunchCooldown": 0,
           "PunchRange": 1000,
           "PunchStrength": 5
         },
@@ -451,7 +523,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-15T21:59:19.6673839\u002B02:00",
+  "LastSaved": "2024-03-15T22:14:39.3597642\u002B02:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
