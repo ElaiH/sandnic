@@ -227,7 +227,7 @@
           "HealthRegenAmount": 0.5,
           "HealthRegenTimer": 3,
           "MaxHealth": 5,
-          "Team": "Snot"
+          "Team": "Badnic"
         }
       ]
     },
@@ -452,7 +452,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-15T11:02:25.3462278\u002B02:00",
+  "LastSaved": "2024-03-15T11:19:54.5136807\u002B02:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
