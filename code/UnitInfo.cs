@@ -9,12 +9,12 @@ public enum UnitType
 	[Icon( "check_box_outline_blank" )]
 	None,
 	/// <summary>
-	/// Players and turrets
+	/// Players
 	/// </summary>
 	[Icon( "nordic_walking" )]
 	Player,
 	/// <summary>
-	/// The enemy :-(
+	/// Bad Guy
 	/// </summary>
 	[Icon( "filter_drama" )]
 	Badnic
