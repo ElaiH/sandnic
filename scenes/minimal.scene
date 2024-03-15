@@ -205,7 +205,7 @@
           "__guid": "4f4622d5-7ba1-49b9-85bf-c06845d8fcd0",
           "BodyGroups": 341,
           "CreateBoneObjects": false,
-          "Model": "models/citizen/citizen.vmdl",
+          "Model": "models/sonic.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
@@ -258,7 +258,11 @@
           },
           "JumpHighet": 1000,
           "MinRun": 800,
+<<<<<<< HEAD
           "MinSpeed": 250,
+=======
+          "MinSpeed": 0,
+>>>>>>> 751d0266d1ea558023e213cbd31770425c7b1856
           "movementenable": false,
           "Run": 800,
           "Speed": 250,
@@ -411,7 +415,11 @@
   },
   "Title": "minimal",
   "Description": "",
+<<<<<<< HEAD
   "LastSaved": "2024-03-15T10:07:30.3872056\u002B02:00",
+=======
+  "LastSaved": "2024-03-15T02:09:35.7122878\u002B01:00",
+>>>>>>> 751d0266d1ea558023e213cbd31770425c7b1856
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
