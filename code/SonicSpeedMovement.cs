@@ -90,6 +90,14 @@ public sealed class SonicSpeedMovement : Component
 				Speed = MinSpeed;
 				cam.FieldOfView = 90;
 			}
+			if(Input.Pressed("Run"))
+			{
+				cam.FieldOfView += 10;
+			}
+			else if ( Input.Released( "Run" ) )
+			{
+				cam.FieldOfView -= 10;
+			}
 			var wishVelocity = Input.AnalogMove * wishSpeed * Transform.Rotation;
 
 			float ogrunvalue = Run;
