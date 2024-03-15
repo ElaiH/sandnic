@@ -142,7 +142,6 @@ public sealed class SonicSpeedMovement : Component
 			}
 			else
 			{
-				cam.FieldOfView = 80;
 				controller.Acceleration = 5f;
 				controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
 				Scene.TimeScale = 0.7f;
