@@ -194,6 +194,44 @@
       ]
     },
     {
+      "__guid": "984c0b75-31d7-4104-9543-58bc8851dc27",
+      "Name": "Cube (3)",
+      "Position": "49.53706,34.08902,564.7129",
+      "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
+      "Scale": "0.5632889,0.5632889,0.5632889",
+      "Tags": "hit",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "944f8bab-7352-4630-ba75-1e78c66d3d47",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/default.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,0,0.93333,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "c387711e-c34b-4996-adbc-82bfc741cdba",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "UnitInfo",
+          "__guid": "8d69b6d9-c7fc-4b4c-861e-676c8b85a45b",
+          "DelayDeath": 0,
+          "HealthRegenAmount": 0.5,
+          "HealthRegenTimer": 3,
+          "MaxHealth": 5,
+          "Team": "Snot"
+        }
+      ]
+    },
+    {
       "__guid": "5ba6db07-aa87-4f9f-b78c-3b76ecec29df",
       "Name": "Player",
       "Position": "-10.30246,38.31794,5.430781",
@@ -262,7 +300,10 @@
           "movementenable": false,
           "Run": 800,
           "Speed": 150,
-          "Spin": 300000
+          "Spin": 300000,
+          "EyePosition": "0,0,60",
+          "PunchRange": 1000,
+          "PunchStrength": 5
         },
         {
           "__type": "BoxCollider",
@@ -411,7 +452,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-15T10:28:16.0875022\u002B02:00",
+  "LastSaved": "2024-03-15T11:02:25.3462278\u002B02:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

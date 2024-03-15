@@ -1,6 +1,7 @@
 using Sandbox;
 using Sandbox.Citizen;
 using Sandbox.VR;
+using System.Runtime;
 
 public sealed class SonicSpeedMovement : Component
 {
@@ -14,6 +15,14 @@ public sealed class SonicSpeedMovement : Component
 	[Property] public CharacterController controller;
 	[Property] public CameraComponent cam;
 	[Property] bool movementenable;
+	[Property]public float PunchStrength { get; set; } = 1f;
+	public float PunchCooldown { get; set; } = 0.5f;
+	[Property]public float PunchRange { get; set; } = 50f;
+	[Property]
+	public Vector3 EyePosition { get; set; }
+	TimeSince _lastPunch;
+
+	public Vector3 EyeWorldPosition => Transform.Local.PointToWorld( EyePosition );
 	bool momentum;
 
 	public Angles EyeAngles {  get; set; }
@@ -24,6 +33,15 @@ public sealed class SonicSpeedMovement : Component
 		Run = MinRun;
 	}
 
+	protected override void DrawGizmos()
+	{
+		if ( !Gizmo.IsSelected ) return;
+
+		var draw = Gizmo.Draw;
+
+		draw.LineSphere( EyePosition, 10f );
+		draw.LineCylinder( EyePosition, EyePosition + Transform.Rotation.Forward * PunchRange, 5f, 5f, 10 );
+	}
 	protected override void OnUpdate()
 	{
 		if ( momentum )
@@ -124,7 +142,7 @@ public sealed class SonicSpeedMovement : Component
 				cam.FieldOfView = 80;
 				controller.Acceleration = 5f;
 				controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
-				Scene.TimeScale = .5f;
+				Scene.TimeScale = 0.7f;
 			}
 
 			controller.Move();
@@ -132,7 +150,38 @@ public sealed class SonicSpeedMovement : Component
 			{
 				Anim.IsGrounded = controller.IsOnGround;
 				Anim.WithVelocity( controller.Velocity );
+
+				if ( _lastPunch >= 2f )
+					Anim.HoldType = CitizenAnimationHelper.HoldTypes.None;
 			}
+			if ( Input.Pressed( "Punch" ) && _lastPunch >= PunchCooldown )
+				Punch();
 		}
+	}
+	public void Punch()
+	{
+
+		if ( Anim != null )
+		{
+			Anim.HoldType = CitizenAnimationHelper.HoldTypes.Punch;
+			Anim.Target.Set( "b_attack", true );
+		}
+
+		var punchTrace = Scene.Trace
+			.FromTo( EyeWorldPosition, EyeWorldPosition + EyeAngles.Forward * PunchRange )
+			.Size( 10f )
+			.WithoutTags( "player" )
+			.IgnoreGameObjectHierarchy( GameObject )
+			.Run();
+
+		if ( punchTrace.Hit )
+			if ( punchTrace.GameObject.Components.TryGet<UnitInfo>( out var unitInfo ) )
+			{
+				unitInfo.Damage( PunchStrength );
+				Log.Info( "Hit" );
+				GameObject.Transform.Position = punchTrace.GameObject.Transform.Position;
+			}
+
+		_lastPunch = 0f;
 	}
 }
