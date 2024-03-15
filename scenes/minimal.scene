@@ -50,7 +50,7 @@
     {
       "__guid": "6ad70641-3c6c-4402-9c85-9a4969af4764",
       "Name": "Plane",
-      "Scale": "48.79708,48.79708,48.79708",
+      "Scale": "1025.831,1025.831,1025.831",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -194,18 +194,17 @@
       ]
     },
     {
-      "__guid": "984c0b75-31d7-4104-9543-58bc8851dc27",
+      "__guid": "624950fd-0b39-4352-bd12-10520ab85f75",
       "Name": "Cube (3)",
-      "Position": "49.53706,34.08902,564.7129",
+      "Position": "49.53701,34.08905,385.9815",
       "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
       "Scale": "0.5632889,0.5632889,0.5632889",
-      "Tags": "hit",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
           "__type": "ModelRenderer",
-          "__guid": "944f8bab-7352-4630-ba75-1e78c66d3d47",
+          "__guid": "d24fdfa3-dc44-4fc1-8b8f-2c9b92578340",
           "BodyGroups": 18446744073709551615,
           "MaterialOverride": "materials/default.vmat",
           "Model": "models/dev/box.vmdl",
@@ -214,7 +213,7 @@
         },
         {
           "__type": "BoxCollider",
-          "__guid": "c387711e-c34b-4996-adbc-82bfc741cdba",
+          "__guid": "dc0cb13d-68c1-4acf-8a01-63ecb95d8873",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -222,7 +221,7 @@
         },
         {
           "__type": "UnitInfo",
-          "__guid": "8d69b6d9-c7fc-4b4c-861e-676c8b85a45b",
+          "__guid": "b1eadae5-5dba-4a62-b577-b8eaca600444",
           "DelayDeath": 0,
           "HealthRegenAmount": 0.5,
           "HealthRegenTimer": 3,
@@ -294,21 +293,21 @@
             "go": "5ba6db07-aa87-4f9f-b78c-3b76ecec29df",
             "component_type": "CharacterController"
           },
-          "JumpHighet": 1000,
+          "JumpHighet": 900,
           "MinRun": 800,
           "MinSpeed": 250,
           "movementenable": false,
           "Run": 800,
           "Speed": 250,
           "Spin": 300000,
-          "EyePosition": "0,0,60",
+          "EyePosition": "0,0,61.59995",
           "PunchRange": 1000,
           "PunchStrength": 5
         },
         {
           "__type": "BoxCollider",
           "__guid": "6aaf7778-245b-47af-82ad-7ea17540472d",
-          "Center": "0,0,29",
+          "Center": "0,0,33.80001",
           "IsTrigger": false,
           "Scale": "12.29999,16.40001,70.20003",
           "Static": false
@@ -395,7 +394,7 @@
       "__guid": "04c51dfb-2a8e-4ffc-aada-5d2a74694a92",
       "Name": "Coin",
       "Position": "0,-31.58887,24.43916",
-      "Scale": "0.2170262,0.2170262,0.2170262",
+      "Scale": "0.1911199,0.1911199,0.1911199",
       "Tags": "coin",
       "Enabled": true,
       "NetworkMode": 2,
@@ -452,7 +451,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-15T16:49:56.2886859\u002B02:00",
+  "LastSaved": "2024-03-15T17:47:03.9374418\u002B02:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
