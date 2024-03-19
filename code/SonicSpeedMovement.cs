@@ -65,52 +65,10 @@ public sealed class SonicSpeedMovement : Component
 	}
 	protected override void OnUpdate()
 	{
+		EyeAngles += Input.AnalogMove;
+		EyeAngles += Input.AnalogLook;
 		Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
-		// Eye input
-		if ( !IsProxy )
-		{
-			var ee = EyeAngles;
-			ee += Input.AnalogLook * 0.5f;
-			ee.roll = 0;
-			EyeAngles = ee;
-
-			var cam = Scene.GetAllComponents<CameraComponent>().FirstOrDefault();
-
-			var lookDir = EyeAngles.ToRotation();
-
-			if ( FirstPerson )
-			{
-				cam.Transform.Position = Eye.Transform.Position;
-				cam.Transform.Rotation = lookDir;
-			}
-			else
-			{
-				cam.Transform.Position = Transform.Position + lookDir.Backward * 300 + Vector3.Up * 75.0f;
-				cam.Transform.Rotation = lookDir;
-			}
-		}
-
-		float rotateDifference = 0;
-
-		// rotate body to look angles
-		if ( Body is not null )
-		{
-			var targetAngle = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation();
-
-			var v = controller.Velocity.WithZ( 0 );
-
-			if ( v.Length > 10.0f )
-			{
-				targetAngle = Rotation.LookAt( v, Vector3.Up );
-			}
-
-			rotateDifference = Body.Transform.Rotation.Distance( targetAngle );
-
-			if ( rotateDifference > 360.0f || controller.Velocity.Length > 10.0f )
-			{
-				Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetAngle, Time.Delta * 10.0f );
-			}
-		}
+		cam.Transform.Position = new Vector3( Transform.Position.x + - 200, Transform.Position.y + 30, Transform.Position.z + 85 );
 
 		if ( momentum )
 		{

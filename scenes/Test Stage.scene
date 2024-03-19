@@ -13,8 +13,7 @@
           "MapName": "maps/teststage.vmap",
           "UseMapFromLaunch": false
         }
-      ],
-      "Children": []
+      ]
     },
     {
       "__guid": "a8968f22-9f2c-48cc-81a8-4b7781151cc6",
@@ -260,7 +259,7 @@
   },
   "Title": "test stage",
   "Description": "",
-  "LastSaved": "2024-03-19T22:54:32.0664568\u002B01:00",
+  "LastSaved": "2024-03-19T23:57:12.3475555\u002B02:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
