@@ -65,6 +65,7 @@ public sealed class SonicSpeedMovement : Component
 	}
 	protected override void OnUpdate()
 	{
+		Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
 		// Eye input
 		if ( !IsProxy )
 		{
