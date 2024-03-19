@@ -68,7 +68,7 @@ public sealed class SonicSpeedMovement : Component
 		EyeAngles += Input.AnalogMove;
 		EyeAngles += Input.AnalogLook;
 		Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
-		cam.Transform.Position = new Vector3( Transform.Position.x - 180, Transform.Position.y, 85 );
+		cam.Transform.Position = new Vector3( Transform.Position.x - 180, Transform.Position.y, Transform.Position.z + 85 );
 
 		if ( momentum )
 		{
