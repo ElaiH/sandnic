@@ -55,8 +55,6 @@ public sealed class SonicSpeedMovement : Component
 			}
 		}
 
-		EyeAngles += Input.AnalogLook;
-		Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
 		if ( controller.IsOnGround )
 		{
 			if ( Input.Down( "Duck" ) )
