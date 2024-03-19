@@ -25,12 +25,33 @@ public sealed class SonicSpeedMovement : Component
 	public Vector3 EyeWorldPosition => Transform.Local.PointToWorld( EyePosition );
 	bool momentum;
 
+	//CamStuff
+	[Property] public bool FirstPerson { get; set; }
+	[Sync]
 	public Angles EyeAngles {  get; set; }
+	[Property] public GameObject Eye { get; set; }
+	[Property] public GameObject Body { get; set; }
 
 	protected override void OnStart()
 	{
 		movementenable = true;
 		Run = MinRun;
+	}
+
+	protected override void OnEnabled()
+	{
+		base.OnEnabled();
+
+		if ( IsProxy )
+			return;
+
+		var cam = Scene.GetAllComponents<CameraComponent>().FirstOrDefault();
+		if ( cam is not null )
+		{
+			var ee = cam.Transform.Rotation.Angles();
+			ee.roll = 0;
+			EyeAngles = ee;
+		}
 	}
 
 	protected override void DrawGizmos()
@@ -44,6 +65,52 @@ public sealed class SonicSpeedMovement : Component
 	}
 	protected override void OnUpdate()
 	{
+		// Eye input
+		if ( !IsProxy )
+		{
+			var ee = EyeAngles;
+			ee += Input.AnalogLook * 0.5f;
+			ee.roll = 0;
+			EyeAngles = ee;
+
+			var cam = Scene.GetAllComponents<CameraComponent>().FirstOrDefault();
+
+			var lookDir = EyeAngles.ToRotation();
+
+			if ( FirstPerson )
+			{
+				cam.Transform.Position = Eye.Transform.Position;
+				cam.Transform.Rotation = lookDir;
+			}
+			else
+			{
+				cam.Transform.Position = Transform.Position + lookDir.Backward * 300 + Vector3.Up * 75.0f;
+				cam.Transform.Rotation = lookDir;
+			}
+		}
+
+		float rotateDifference = 0;
+
+		// rotate body to look angles
+		if ( Body is not null )
+		{
+			var targetAngle = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation();
+
+			var v = controller.Velocity.WithZ( 0 );
+
+			if ( v.Length > 10.0f )
+			{
+				targetAngle = Rotation.LookAt( v, Vector3.Up );
+			}
+
+			rotateDifference = Body.Transform.Rotation.Distance( targetAngle );
+
+			if ( rotateDifference > 360.0f || controller.Velocity.Length > 10.0f )
+			{
+				Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetAngle, Time.Delta * 10.0f );
+			}
+		}
+
 		if ( momentum )
 		{
 			Run += Time.Delta * 50;
@@ -54,9 +121,7 @@ public sealed class SonicSpeedMovement : Component
 				cam.FieldOfView = 130;
 			}
 		}
-
-		EyeAngles += Input.AnalogLook;
-		Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
+		
 		if ( controller.IsOnGround )
 		{
 			if ( Input.Down( "Duck" ) )
