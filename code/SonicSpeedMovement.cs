@@ -65,10 +65,20 @@ public sealed class SonicSpeedMovement : Component
 	}
 	protected override void OnUpdate()
 	{
-		EyeAngles += Input.AnalogMove;
-		EyeAngles += Input.AnalogLook;
-		Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
-		cam.Transform.Position = new Vector3( Transform.Position.x - 180, Transform.Position.y, Transform.Position.z + 85 );
+
+		//cam.Transform.Position = new Vector3( Transform.Position.x - 180, Transform.Position.y, Transform.Position.z + 85 );
+
+		if(controller.IsOnGround )
+		{
+			EyeAngles += Input.AnalogMove;
+			EyeAngles += Input.AnalogLook;
+			Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
+		}
+		else
+		{
+			EyeAngles += Input.AnalogLook;
+			Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
+		}
 
 		if ( momentum )
 		{
