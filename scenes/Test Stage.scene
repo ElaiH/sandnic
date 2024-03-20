@@ -9,11 +9,12 @@
       "Components": [
         {
           "__type": "MapInstance",
-          "__guid": "d96fdce4-153d-4e3d-baac-37ff1cea51e1",
+          "__guid": "09c67511-8dd1-40d7-8c28-009538b5846c",
           "MapName": "maps/teststage.vmap",
           "UseMapFromLaunch": false
         }
-      ]
+      ],
+      "Children": []
     },
     {
       "__guid": "a8968f22-9f2c-48cc-81a8-4b7781151cc6",
@@ -78,20 +79,13 @@
             "component_type": "CharacterController"
           },
           "JumpHighet": 1000,
+          "mcqueen": 0,
           "MinRun": 800,
           "MinSpeed": 250,
           "movementenable": false,
           "Run": 800,
           "Speed": 250,
           "Spin": 300000,
-          "Body": {
-            "_type": "gameobject",
-            "go": "a8968f22-9f2c-48cc-81a8-4b7781151cc6"
-          },
-          "Eye": {
-            "_type": "gameobject",
-            "go": "9c136ca3-b085-4b1c-88ac-c252aecbb00e"
-          },
           "EyePosition": "0,0,59.99998",
           "FirstPerson": false,
           "PunchRange": 1000,
@@ -259,7 +253,7 @@
   },
   "Title": "test stage",
   "Description": "",
-  "LastSaved": "2024-03-19T23:57:12.3475555\u002B02:00",
+  "LastSaved": "2024-03-20T21:51:18.3232652\u002B02:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

@@ -300,7 +300,7 @@
           "Run": 800,
           "Speed": 250,
           "Spin": 300000,
-          "EyePosition": "0,0,58.8",
+          "EyePosition": "0,0,58.09999",
           "FirstPerson": false,
           "PunchRange": 1000,
           "PunchStrength": 5
@@ -308,7 +308,7 @@
         {
           "__type": "BoxCollider",
           "__guid": "6aaf7778-245b-47af-82ad-7ea17540472d",
-          "Center": "0,0,29",
+          "Center": "0,0,30",
           "IsTrigger": false,
           "Scale": "12.29999,16.40001,70.20003",
           "Static": false
@@ -388,14 +388,21 @@
               "Scale": 0.2
             }
           ]
+        },
+        {
+          "__guid": "77385cdd-55f4-45ac-9bb1-53983b68d829",
+          "Name": "Object",
+          "Position": "14.74076,0,53.51876",
+          "Enabled": true,
+          "NetworkMode": 2
         }
       ]
     },
     {
       "__guid": "04c51dfb-2a8e-4ffc-aada-5d2a74694a92",
       "Name": "Coin",
-      "Position": "0,-31.58887,24.43916",
-      "Scale": "0.1911199,0.1911199,0.1911199",
+      "Position": "0,-31.58887,31.77649",
+      "Scale": "0.2577562,0.2577562,0.2577562",
       "Tags": "coin",
       "Enabled": true,
       "NetworkMode": 2,
@@ -452,7 +459,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-20T21:17:06.8861531\u002B02:00",
+  "LastSaved": "2024-03-20T21:52:24.3868507\u002B02:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

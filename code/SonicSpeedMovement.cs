@@ -30,8 +30,6 @@ public sealed class SonicSpeedMovement : Component
 	[Property] public bool FirstPerson { get; set; }
 	[Sync]
 	public Angles EyeAngles {  get; set; }
-	[Property] public GameObject Eye { get; set; }
-	[Property] public GameObject Body { get; set; }
 
 	protected override void OnStart()
 	{
