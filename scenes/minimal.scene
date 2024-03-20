@@ -293,6 +293,7 @@
             "component_type": "CharacterController"
           },
           "JumpHighet": 1000,
+          "mcqueen": 0,
           "MinRun": 800,
           "MinSpeed": 250,
           "movementenable": false,
@@ -451,7 +452,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-20T21:06:36.2771532\u002B02:00",
+  "LastSaved": "2024-03-20T21:17:06.8861531\u002B02:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

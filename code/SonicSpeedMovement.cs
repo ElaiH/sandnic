@@ -15,6 +15,7 @@ public sealed class SonicSpeedMovement : Component
 	[Property] public CharacterController controller;
 	[Property] public CameraComponent cam;
 	[Property] bool movementenable;
+	[Property] float mcqueen;
 	[Property]public float PunchStrength { get; set; } = 1f;
 	//[Property]public float PunchCooldown { get; set; } = 0.5f;
 	[Property]public float PunchRange { get; set; } = 50f;
@@ -68,7 +69,7 @@ public sealed class SonicSpeedMovement : Component
 
 		//cam.Transform.Position = new Vector3( Transform.Position.x - 180, Transform.Position.y, Transform.Position.z + 85 );
 
-		if(controller.IsOnGround )
+		if(controller.IsOnGround && mcqueen > 255 )
 		{
 			EyeAngles += Input.AnalogMove;
 			EyeAngles += Input.AnalogLook;
@@ -173,6 +174,7 @@ public sealed class SonicSpeedMovement : Component
 
 			controller.Accelerate( wishVelocity );
 
+			mcqueen = wishSpeed;
 
 			if ( controller.IsOnGround )
 			{
