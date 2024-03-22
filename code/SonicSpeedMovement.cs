@@ -147,6 +147,18 @@ public sealed class SonicSpeedMovement : Component
 			if ( controller == null ) return;
 
 			var wishSpeed = Input.Down( "Run" ) ? Run : Speed;
+			if(wishSpeed > 2000)
+			{
+				wishSpeed = 2000;
+			}
+			if(wishSpeed > 900)
+			{
+				JumpHighet = 250;
+			}
+			else if(wishSpeed < 900)
+			{
+				JumpHighet = 1000;
+			}
 			if( Input.AnalogMove != 0 )
 			{
 				momentum = true;
