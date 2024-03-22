@@ -9,7 +9,7 @@
       "Components": [
         {
           "__type": "MapInstance",
-          "__guid": "09c67511-8dd1-40d7-8c28-009538b5846c",
+          "__guid": "d96fdce4-153d-4e3d-baac-37ff1cea51e1",
           "MapName": "maps/teststage.vmap",
           "UseMapFromLaunch": false
         }
@@ -27,9 +27,10 @@
           "__guid": "30c25047-7c8b-403d-a3f5-d234ccc9b1ca",
           "BodyGroups": 341,
           "CreateBoneObjects": false,
+          "MaterialGroup": "Skin04",
           "Model": "models/citizen/citizen.vmdl",
           "RenderType": "On",
-          "Tint": "0,0.11667,1,1"
+          "Tint": "0,0.15,1,1"
         },
         {
           "__type": "CitizenAnimationHelper",
@@ -228,6 +229,32 @@
           "SkyColor": "0.2532,0.32006,0.35349,1"
         }
       ]
+    },
+    {
+      "__guid": "222a66cb-5b11-4664-a9ef-87aa61b3d784",
+      "Name": "Cube",
+      "Position": "0,256.0768,0",
+      "Scale": "3.922198,4.907496,0.3740875",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "2a5d0907-2fff-4968-8799-d01aa06fd77b",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "361580fe-1ebc-4946-8086-5be37d76e5a0",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -253,7 +280,7 @@
   },
   "Title": "test stage",
   "Description": "",
-  "LastSaved": "2024-03-20T21:51:18.3232652\u002B02:00",
+  "LastSaved": "2024-03-22T19:48:30.6338645\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
