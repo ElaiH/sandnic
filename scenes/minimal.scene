@@ -395,7 +395,7 @@
       "__guid": "04c51dfb-2a8e-4ffc-aada-5d2a74694a92",
       "Name": "Coin",
       "Position": "0,-31.58887,24.43916",
-      "Scale": "0.1911199,0.1911199,0.1911199",
+      "Scale": "1.006853,1.006853,1.006853",
       "Tags": "coin",
       "Enabled": true,
       "NetworkMode": 2,
@@ -404,7 +404,7 @@
           "__type": "ModelRenderer",
           "__guid": "c96aba47-9ce0-4cb7-84b6-360527ac99a1",
           "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
+          "Model": "bochonok/models/ring.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
@@ -413,7 +413,7 @@
           "__guid": "834010d1-2fe6-4926-91a1-d86f5602609a",
           "Center": "0,0,0",
           "IsTrigger": true,
-          "Scale": "50,50,50",
+          "Scale": "2.199991,12.4,12.89999",
           "Static": false
         },
         {
@@ -452,8 +452,10 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-22T00:35:12.9174629\u002B02:00",
+  "LastSaved": "2024-03-26T15:44:54.5489151\u002B02:00",
   "ResourceVersion": 1,
   "__version": 1,
-  "__references": []
+  "__references": [
+    "greg.ring"
+  ]
 }

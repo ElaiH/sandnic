@@ -22,6 +22,7 @@ public sealed class SonicSpeedMovement : Component
 	[Property]
 	public Vector3 EyePosition { get; set; }
 	TimeSince _lastPunch;
+	Transform _camthing;
 
 	public Vector3 EyeWorldPosition => Transform.Local.PointToWorld( EyePosition );
 	bool momentum;
@@ -35,6 +36,7 @@ public sealed class SonicSpeedMovement : Component
 	{
 		movementenable = true;
 		Run = MinRun;
+		_camthing = cam.Transform.Local;
 	}
 
 	protected override void OnEnabled()
@@ -64,10 +66,11 @@ public sealed class SonicSpeedMovement : Component
 	}
 	protected override void OnUpdate()
 	{
+		//cam.Transform.Local = _camthing.RotateAround( EyePosition, EyeAngles.WithYaw(0f) );
 
 		//cam.Transform.Position = new Vector3( Transform.Position.x - 180, Transform.Position.y, Transform.Position.z + 85 );
 
-		if(controller.IsOnGround && mcqueen > 255 )
+		if (controller.IsOnGround && mcqueen > 255 )
 		{
 			EyeAngles += Input.AnalogMove;
 			EyeAngles += Input.AnalogLook;
@@ -92,6 +95,8 @@ public sealed class SonicSpeedMovement : Component
 		
 		if ( controller.IsOnGround )
 		{
+			controller.Acceleration = 10f;
+			controller.ApplyFriction( 5f );
 			if ( Input.Down( "Duck" ) )
 			{
 				//animation here
@@ -153,7 +158,7 @@ public sealed class SonicSpeedMovement : Component
 			}
 			if(wishSpeed > 900)
 			{
-				JumpHighet = 250;
+				JumpHighet = 500;
 			}
 			else if(wishSpeed < 900)
 			{
