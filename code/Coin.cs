@@ -14,4 +14,9 @@ public sealed class Coin : Component, Component.ITriggerListener
 	{
 
 	}
+	protected override void OnUpdate()
+	{
+		base.OnUpdate();
+		Transform.Rotation *= Rotation.FromYaw(Time.Delta * 100);
+	}
 }
