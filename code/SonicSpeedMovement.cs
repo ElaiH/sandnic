@@ -80,7 +80,7 @@ public sealed class SonicSpeedMovement : Component
 		{
 			EyeAngles += Input.AnalogLook;
 			Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
-			cam.Transform.Local = _camthing.RotateAround( EyePosition, EyeAngles.WithYaw( 0f ) );
+			//cam.Transform.Local = _camthing.RotateAround( EyePosition, EyeAngles.WithYaw( 0f ) );
 		}
 
 		if ( momentum )
