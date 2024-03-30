@@ -1,0 +1,260 @@
+{
+  "__guid": "f974696c-8acc-4d17-8842-751aac6ad4d8",
+  "GameObjects": [
+    {
+      "__guid": "1ba56347-e803-4aa3-a8fb-bd8e920b858f",
+      "Name": "Map",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "__guid": "09c67511-8dd1-40d7-8c28-009538b5846c",
+          "MapName": "maps/teststage.vmap",
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "a8968f22-9f2c-48cc-81a8-4b7781151cc6",
+      "Name": "Player",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SkinnedModelRenderer",
+          "__guid": "30c25047-7c8b-403d-a3f5-d234ccc9b1ca",
+          "BodyGroups": 341,
+          "CreateBoneObjects": false,
+          "Model": "models/citizen/citizen.vmdl",
+          "RenderType": "On",
+          "Tint": "0,0.11667,1,1"
+        },
+        {
+          "__type": "CitizenAnimationHelper",
+          "__guid": "4d46bcf1-7b15-42fc-aeaa-6a8e54e843f0",
+          "BodyWeight": 1,
+          "EyesWeight": 1,
+          "HeadWeight": 1,
+          "Height": 1,
+          "LookAtEnabled": false,
+          "Target": {
+            "_type": "component",
+            "component_id": "30c25047-7c8b-403d-a3f5-d234ccc9b1ca",
+            "go": "a8968f22-9f2c-48cc-81a8-4b7781151cc6",
+            "component_type": "SkinnedModelRenderer"
+          }
+        },
+        {
+          "__type": "CharacterController",
+          "__guid": "c083aaae-12cb-40e2-b1f7-b21b8ea84cdc",
+          "Acceleration": 10,
+          "Bounciness": 0.3,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "",
+          "Radius": 16,
+          "StepHeight": 18
+        },
+        {
+          "__type": "SonicSpeedMovement",
+          "__guid": "0f013e09-bafe-47ea-bcb8-b646f1c54e55",
+          "Anim": {
+            "_type": "component",
+            "component_id": "4d46bcf1-7b15-42fc-aeaa-6a8e54e843f0",
+            "go": "a8968f22-9f2c-48cc-81a8-4b7781151cc6",
+            "component_type": "CitizenAnimationHelper"
+          },
+          "cam": {
+            "_type": "component",
+            "component_id": "52f1d445-edf2-4601-9972-35cdc22b9bc3",
+            "go": "af0bb7d0-d6d7-4d35-ae82-93f3770d2043",
+            "component_type": "CameraComponent"
+          },
+          "controller": {
+            "_type": "component",
+            "component_id": "c083aaae-12cb-40e2-b1f7-b21b8ea84cdc",
+            "go": "a8968f22-9f2c-48cc-81a8-4b7781151cc6",
+            "component_type": "CharacterController"
+          },
+          "JumpHighet": 900,
+          "mcqueen": 0,
+          "MinRun": 800,
+          "MinSpeed": 250,
+          "movementenable": false,
+          "Run": 800,
+          "Speed": 250,
+          "Spin": 300000,
+          "EyePosition": "0,0,59.99998",
+          "FirstPerson": false,
+          "PunchRange": 1000,
+          "PunchStrength": 5
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "158058b3-e97e-4749-8ce5-c0d8bc5b2a3e",
+          "Center": "0,0,33.69999",
+          "IsTrigger": false,
+          "Scale": "12.29999,16.40001,70.20003",
+          "Static": false
+        },
+        {
+          "__type": "CoinManager",
+          "__guid": "58758e28-3b54-4196-bbda-e2e4e87ba973",
+          "Coins": 0
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "af0bb7d0-d6d7-4d35-ae82-93f3770d2043",
+          "Name": "Camera",
+          "Position": "-151.356,-10.99184,73.52535",
+          "Rotation": "0,0.1305262,0,0.9914449",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "__guid": "52f1d445-edf2-4601-9972-35cdc22b9bc3",
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "All",
+              "FieldOfView": 60,
+              "IsMainCamera": true,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "Priority": 1,
+              "RenderExcludeTags": "",
+              "RenderTags": "",
+              "TargetEye": "None",
+              "Viewport": "0,0,1,1",
+              "ZFar": 10000,
+              "ZNear": 10
+            },
+            {
+              "__type": "Bloom",
+              "__guid": "e7405362-0839-472a-a108-58f027235783",
+              "BloomColor": {
+                "color": [
+                  {
+                    "c": "1,1,1,1"
+                  },
+                  {
+                    "t": 1,
+                    "c": "1,1,1,1"
+                  }
+                ],
+                "alpha": []
+              },
+              "BloomCurve": [
+                {
+                  "y": 0.5
+                },
+                {
+                  "x": 1,
+                  "y": 1
+                }
+              ],
+              "Mode": "Additive",
+              "Strength": 0.5,
+              "Threshold": 0.5,
+              "ThresholdWidth": 0.5
+            },
+            {
+              "__type": "Tonemapping",
+              "__guid": "e93394cd-27b9-44b6-be5b-0516f4113028",
+              "ExposureCompensation": 0,
+              "MaximumExposure": 2,
+              "MinimumExposure": 1,
+              "Rate": 1
+            },
+            {
+              "__type": "Sharpen",
+              "__guid": "1ba4b7c4-05c6-4053-8c1e-dcbe6034f2f8",
+              "Scale": 0.2
+            }
+          ]
+        },
+        {
+          "__guid": "9c136ca3-b085-4b1c-88ac-c252aecbb00e",
+          "Name": "eye",
+          "Enabled": true,
+          "NetworkMode": 2
+        }
+      ]
+    },
+    {
+      "__guid": "061a8c39-2e91-43c5-83f2-c7277df75818",
+      "Name": "2D Skybox",
+      "Tags": "skybox",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "__guid": "940e853e-7722-4dc2-a225-6716c3e0b624",
+          "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "EnvmapProbe",
+          "__guid": "0d659a77-cf88-4689-b589-480719d3ae10",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "Feathering": 0.02,
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "8c3732dc-6a1e-406e-8209-604aa8c3414a",
+      "Name": "Sun",
+      "Rotation": "0.2391176,-0.8923991,-0.09904572,-0.3696437",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "__guid": "3dcbd595-a564-486b-84fd-8c442501c74a",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.94419,0.97767,1,1",
+          "Shadows": true,
+          "SkyColor": "0.2532,0.32006,0.35349,1"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "test stage",
+  "Description": "",
+  "LastSaved": "2024-03-30T10:00:48.799595\u002B03:00",
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

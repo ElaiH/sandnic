@@ -135,11 +135,17 @@ public sealed class SonicSpeedMovement : Component
 			.Run();
 
 		if ( punchTrace.Hit )
+		{
 			if ( punchTrace.GameObject.Components.TryGet<UnitInfo>( out var unitInfo ) )
 			{
 				Log.Info( "Hit" );
 				Scene.TimeScale = 0.1f;
 			}
+		}
+		else
+		{
+			Scene.TimeScale = 1f;
+		}
 
 	}
 
@@ -163,7 +169,7 @@ public sealed class SonicSpeedMovement : Component
 			}
 			else if(wishSpeed < 900)
 			{
-				JumpHighet = 1000;
+				JumpHighet = 900;
 			}
 			if( Input.AnalogMove != 0 )
 			{
@@ -204,7 +210,6 @@ public sealed class SonicSpeedMovement : Component
 					if ( Anim != null )
 						Anim.TriggerJump();
 				}
-				Scene.TimeScale = 1f;
 			}
 			else
 			{

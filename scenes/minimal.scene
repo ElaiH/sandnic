@@ -292,7 +292,7 @@
             "go": "5ba6db07-aa87-4f9f-b78c-3b76ecec29df",
             "component_type": "CharacterController"
           },
-          "JumpHighet": 1000,
+          "JumpHighet": 900,
           "mcqueen": 0,
           "MinRun": 800,
           "MinSpeed": 250,
@@ -323,7 +323,7 @@
         {
           "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
           "Name": "Camera",
-          "Position": "-271.9297,-10.99184,104.2861",
+          "Position": "-239.8534,-10.99184,97.23814",
           "Rotation": "0,0.1305262,0,0.9914449",
           "Enabled": true,
           "NetworkMode": 2,
@@ -394,7 +394,7 @@
     {
       "__guid": "04c51dfb-2a8e-4ffc-aada-5d2a74694a92",
       "Name": "Coin",
-      "Position": "0,-43.23388,24.43916",
+      "Position": "0,-34.04521,24.43916",
       "Scale": "1.524894,1.524894,1.524894",
       "Tags": "coin",
       "Enabled": true,
@@ -432,9 +432,9 @@
       ]
     },
     {
-      "__guid": "d64068b0-5fba-453e-bb65-1df62dacb180",
+      "__guid": "64cce74e-dd44-455c-880b-de96a5132b2b",
       "Name": "Coin (1)",
-      "Position": "0,-72.49129,24.43916",
+      "Position": "0,-67.44118,24.43916",
       "Scale": "1.524894,1.524894,1.524894",
       "Tags": "coin",
       "Enabled": true,
@@ -442,7 +442,7 @@
       "Components": [
         {
           "__type": "ModelRenderer",
-          "__guid": "f160f227-4f12-434f-9eb1-5e4b416f11b4",
+          "__guid": "17640211-d827-425e-bc70-e5944f46c504",
           "BodyGroups": 18446744073709551615,
           "Model": "bochonok/models/ring.vmdl",
           "RenderType": "On",
@@ -450,7 +450,7 @@
         },
         {
           "__type": "BoxCollider",
-          "__guid": "bacebb08-2cbe-4f55-ad79-f66df15b6e46",
+          "__guid": "6a47d21e-3029-40d1-a705-54c22d64c137",
           "Center": "0,0,0",
           "IsTrigger": true,
           "Scale": "2.199991,12.4,12.89999",
@@ -458,7 +458,7 @@
         },
         {
           "__type": "Coin",
-          "__guid": "0f9917cd-5849-4208-ad9c-85cfc7d24d27",
+          "__guid": "18e8296b-1ae8-4b82-b9c1-3e336d21683e",
           "coinMaster": {
             "_type": "component",
             "component_id": "6c567a92-a532-45f5-8136-b03a7cc4f81c",
@@ -468,166 +468,6 @@
           "roatatearound": false,
           "roatatePitch": false,
           "roatateup": true
-        }
-      ]
-    },
-    {
-      "__guid": "258d5e9b-ca44-4e21-97a5-de385c0d2912",
-      "Name": "Coin (3)",
-      "Position": "0,-102.4254,24.43916",
-      "Scale": "1.524894,1.524894,1.524894",
-      "Tags": "coin",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "29533ee0-629e-4d5d-a848-9ed1b0c313a8",
-          "BodyGroups": 18446744073709551615,
-          "Model": "bochonok/models/ring.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "__guid": "969c3869-3c43-4d4a-b9d7-c4306a8135f6",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "2.199991,12.4,12.89999",
-          "Static": false
-        },
-        {
-          "__type": "Coin",
-          "__guid": "d13455e7-1789-4a70-bfe4-c4d4185ff204",
-          "coinMaster": {
-            "_type": "component",
-            "component_id": "6c567a92-a532-45f5-8136-b03a7cc4f81c",
-            "go": "5ba6db07-aa87-4f9f-b78c-3b76ecec29df",
-            "component_type": "CoinManager"
-          },
-          "roatatearound": true,
-          "roatatePitch": false,
-          "roatateup": true
-        }
-      ]
-    },
-    {
-      "__guid": "ae6844c8-acd5-4a75-8f5a-70dadd9754df",
-      "Name": "Coin (2)",
-      "Position": "0,-131.2716,24.43916",
-      "Scale": "1.524894,1.524894,1.524894",
-      "Tags": "coin",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "fb8f840f-7d8b-4d52-8e9b-59fd476da586",
-          "BodyGroups": 18446744073709551615,
-          "Model": "bochonok/models/ring.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "__guid": "9c5df390-9388-4dc7-85ee-960a2736da1b",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "2.199991,12.4,12.89999",
-          "Static": false
-        },
-        {
-          "__type": "Coin",
-          "__guid": "b4497c9b-51c6-4597-a6d9-42669b1f8c4f",
-          "coinMaster": {
-            "_type": "component",
-            "component_id": "6c567a92-a532-45f5-8136-b03a7cc4f81c",
-            "go": "5ba6db07-aa87-4f9f-b78c-3b76ecec29df",
-            "component_type": "CoinManager"
-          },
-          "roatatearound": false,
-          "roatatePitch": true,
-          "roatateup": false
-        }
-      ]
-    },
-    {
-      "__guid": "81778cc4-7bf2-46dc-91d2-8a8af797ea9d",
-      "Name": "Coin (4)",
-      "Position": "0,-160.7293,24.43916",
-      "Scale": "1.524894,1.524894,1.524894",
-      "Tags": "coin",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "0edb68fa-4edd-4538-a17f-9afe8652de9c",
-          "BodyGroups": 18446744073709551615,
-          "Model": "bochonok/models/ring.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "__guid": "c9a900b3-27a2-420a-9095-467f43af9a1f",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "2.199991,12.4,12.89999",
-          "Static": false
-        },
-        {
-          "__type": "Coin",
-          "__guid": "69e55b3f-968f-495d-b483-ac0fecb2a65f",
-          "coinMaster": {
-            "_type": "component",
-            "component_id": "6c567a92-a532-45f5-8136-b03a7cc4f81c",
-            "go": "5ba6db07-aa87-4f9f-b78c-3b76ecec29df",
-            "component_type": "CoinManager"
-          },
-          "roatatearound": true,
-          "roatatePitch": true,
-          "roatateup": true
-        }
-      ]
-    },
-    {
-      "__guid": "e1307002-9888-4a69-8929-2544e81ff81c",
-      "Name": "Coin (5)",
-      "Position": "0,-189.5459,24.43916",
-      "Scale": "1.524894,1.524894,1.524894",
-      "Tags": "coin",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "0f957e77-6bf2-498a-8bb3-41796abcbb51",
-          "BodyGroups": 18446744073709551615,
-          "Model": "bochonok/models/ring.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "__guid": "6ae5a6f5-5fe6-4689-9608-52c3a834226a",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "2.199991,12.4,12.89999",
-          "Static": false
-        },
-        {
-          "__type": "Coin",
-          "__guid": "4a912cd1-aae6-4c9b-8ea1-73a33ba4fb4f",
-          "coinMaster": {
-            "_type": "component",
-            "component_id": "6c567a92-a532-45f5-8136-b03a7cc4f81c",
-            "go": "5ba6db07-aa87-4f9f-b78c-3b76ecec29df",
-            "component_type": "CoinManager"
-          },
-          "roatatearound": false,
-          "roatatePitch": false,
-          "roatateup": false
         }
       ]
     }
@@ -655,7 +495,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-29T17:52:43.8447064\u002B03:00",
+  "LastSaved": "2024-03-30T10:07:49.8279717\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

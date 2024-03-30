@@ -5356,21 +5356,14 @@
             "go": "ff866908-b2ae-44d4-a165-fa2eb2021161",
             "component_type": "CharacterController"
           },
-          "JumpHighet": 1000,
+          "JumpHighet": 900,
+          "mcqueen": 0,
           "MinRun": 800,
           "MinSpeed": 250,
           "movementenable": false,
           "Run": 800,
           "Speed": 250,
           "Spin": 300000,
-          "Body": {
-            "_type": "gameobject",
-            "go": "ff866908-b2ae-44d4-a165-fa2eb2021161"
-          },
-          "Eye": {
-            "_type": "gameobject",
-            "go": "129e5fea-371b-4d24-a96f-00a2cb9c820f"
-          },
           "EyePosition": "0,0,59.99998",
           "FirstPerson": false,
           "PunchRange": 1000,
@@ -5502,7 +5495,10 @@
             "component_id": "dd88d9c2-f24a-49fc-807f-41f051fa60b6",
             "go": "ff866908-b2ae-44d4-a165-fa2eb2021161",
             "component_type": "CoinManager"
-          }
+          },
+          "roatatearound": false,
+          "roatatePitch": false,
+          "roatateup": false
         }
       ]
     },
@@ -7186,7 +7182,7 @@
   },
   "Title": "untitled",
   "Description": "",
-  "LastSaved": "2024-03-19T21:23:16.7872511\u002B01:00",
+  "LastSaved": "2024-03-30T10:01:02.4509321\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
