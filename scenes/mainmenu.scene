@@ -48,6 +48,104 @@
       ]
     },
     {
+      "__guid": "12b7f66e-7e5f-4eec-863b-8522833a786a",
+      "Name": "Env",
+      "Scale": "0.25,0.25,0.25",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "__guid": "3fe49821-eed0-4b2f-889d-4df909398e17",
+          "Name": "space",
+          "Position": "-1499.889,1782.777,10000",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "54638137-131a-4183-b570-e45fae0b995f",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/mainmenu/space.vmdl",
+              "RenderType": "Off",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SpinAround",
+              "__guid": "496fc183-8d20-4110-ae33-8b32dd312665",
+              "SpinAngles": "0,0.4,0"
+            }
+          ]
+        },
+        {
+          "__guid": "9933d9b1-2798-497b-90bc-ffe9bb3ae7c4",
+          "Name": "Core",
+          "Enabled": true,
+          "NetworkMode": 2
+        },
+        {
+          "__guid": "c0a63d9b-0f88-4fbf-84e2-db7196a4822b",
+          "Name": "earthcomplete",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "f20ed5e4-6f20-4bbd-bec9-a702fc96d889",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/mainmenu/earthcomplete.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,0.99"
+            },
+            {
+              "__type": "SpinAround",
+              "__guid": "58a88606-6450-45a2-826e-4ac8de8d6174",
+              "SpinAngles": "0,0.8,0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "ca8771bc-5156-479a-8c82-97c49b80c84d",
+      "Name": "Camera",
+      "Position": "-22276.14,0,0",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "__guid": "efa8b09d-46c0-47a4-9cfc-91c12cdccc60",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 87.4,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 100000000,
+          "ZNear": 10
+        },
+        {
+          "__type": "LookAround",
+          "__guid": "ff21f50c-f196-4605-a75d-4297af9f7797",
+          "Body": {
+            "_type": "gameobject",
+            "go": "c0a63d9b-0f88-4fbf-84e2-db7196a4822b"
+          },
+          "Distance": 5600,
+          "Head": {
+            "_type": "gameobject",
+            "go": "9933d9b1-2798-497b-90bc-ffe9bb3ae7c4"
+          }
+        }
+      ]
+    },
+    {
       "__guid": "828cfb52-fc7d-4b86-82f7-364612fd5dc4",
       "Name": "Hud",
       "Enabled": true,
@@ -60,49 +158,6 @@
           "Opacity": 1,
           "Scale": 1,
           "ZIndex": 100
-        }
-      ]
-    },
-    {
-      "__guid": "ca8771bc-5156-479a-8c82-97c49b80c84d",
-      "Name": "Camera",
-      "Position": "-17739.48,0,0",
-      "Tags": "maincamera",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "CameraComponent",
-          "__guid": "efa8b09d-46c0-47a4-9cfc-91c12cdccc60",
-          "BackgroundColor": "0.33333,0.46275,0.52157,1",
-          "ClearFlags": "All",
-          "FieldOfView": 90,
-          "IsMainCamera": true,
-          "Orthographic": false,
-          "OrthographicHeight": 1204,
-          "Priority": 1,
-          "RenderExcludeTags": "",
-          "RenderTags": "",
-          "TargetEye": "None",
-          "Viewport": "0,0,1,1",
-          "ZFar": 100000000,
-          "ZNear": 10
-        }
-      ]
-    },
-    {
-      "__guid": "c0a63d9b-0f88-4fbf-84e2-db7196a4822b",
-      "Name": "earthcomplete",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "f20ed5e4-6f20-4bbd-bec9-a702fc96d889",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/mainmenu/earthcomplete.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,0.99"
         }
       ]
     }
@@ -130,7 +185,7 @@
   },
   "Title": "mainmenu",
   "Description": "",
-  "LastSaved": "2024-03-30T21:22:04.8883597\u002B01:00",
+  "LastSaved": "2024-03-30T22:31:03.3501155\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
