@@ -1,0 +1,53 @@
+﻿@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="vitals">
+		<p>⏱️@GetTimeString()</p>
+	</div>
+
+	<div class="boosts">
+		<p>🪙 @Sonic.Rings</p>
+		<div class="boost">
+			<div class="inner">
+				<div class="fill" style="width: @(Sonic.Boost / Sonic.MaxBoost * 100f)%">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="dev-hud">
+		<div class="var">
+			<p>@Test()</p>
+		</div>
+	</div>
+</root>
+
+@code
+{
+	[Property]
+	SonicSpeedMovement Sonic { get; set; }
+
+	string GetTimeString()
+	{
+		var time = Sonic.TimeAlive;
+		var minutes = (int)time / 60;
+		var seconds = (int)time % 60;
+		return $"{minutes:00}:{seconds:00}";
+	}
+
+	string Test()
+	{
+		var speed = Sonic.Speed;
+		var speedy = (int)speed / 1;
+		return $"Speed:{speedy:000}";
+		//<span class="name">Speed<span class="value">: @Sonic.Speed</span></span>
+	}
+
+	protected override int BuildHash()
+	{
+		return System.HashCode.Combine(Sonic.Rings,Sonic.Boost,Sonic.Speed, GetTimeString(), Test());
+	}
+
+}

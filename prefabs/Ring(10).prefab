@@ -1,0 +1,61 @@
+{
+  "RootObject": {
+    "__guid": "ae3600ca-f338-4b6a-92d3-05df4fb6017e",
+    "Name": "ring(10)",
+    "Scale": "2.085156,2.085156,2.085156",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "ModelRenderer",
+        "__guid": "a8957013-fd71-4303-86fd-4c8c9acf5fbc",
+        "BodyGroups": 18446744073709551615,
+        "Model": "bochonok/models/ring.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Ring",
+        "__guid": "2079e8fa-b9c0-44bf-87fd-157b2c7d29b7",
+        "BoostAmount": 20,
+        "RingAmount": 10,
+        "SpinAngles": "0,400,0"
+      },
+      {
+        "__type": "BoxCollider",
+        "__guid": "3627bb97-7091-49f8-8e0e-a4584fce5858",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Scale": "3.300018,18.2,17.10002",
+        "Static": false
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "84839fd4-9640-4a13-9502-577cbd847443",
+        "Name": "Text",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "TextRenderer",
+            "__guid": "e2f00659-9724-4f86-869a-cb19cde62793",
+            "Color": "1,0.75,0,1",
+            "FontFamily": "Poppins",
+            "FontSize": 115.49,
+            "Scale": 0.05,
+            "Text": "10\n"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "greg.ring"
+  ]
+}

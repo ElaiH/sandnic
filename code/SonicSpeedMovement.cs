@@ -5,6 +5,21 @@ using System.Runtime;
 
 public sealed class SonicSpeedMovement : Component
 {
+	//Variables
+	[Property]
+	[Category("Variables")]
+	public int Rings { get; set; } = 0;
+	[Property]
+	[Category( "Variables" )]
+	public int MaxRings { get; set; } = 999;
+	[Property]
+	[Category( "Variables" )]
+	public float Boost { get; set; } = 0f;
+	[Property]
+	[Category( "Variables" )]
+	public float MaxBoost { get; set; } = 100f;
+	public TimeSince TimeAlive { get; set; } = 0f;
+	
 	[Property] public float Speed;
 	[Property] public float MinSpeed;
 	[Property] public float Run;

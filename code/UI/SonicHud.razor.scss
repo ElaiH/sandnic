@@ -1,0 +1,69 @@
+SonicHud {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-family: Poppins;
+	font-size: 60px;
+
+	.dev-hud{
+		position: absolute;
+		bottom: 32px;
+		right: 32px;
+		flex-direction: column;
+		padding: 32px;
+		background-color: rgba(0,0,0, 0.6f);
+		width: 380px;
+		gap: 4px;
+
+		height: 150px;
+		transform: skewX(-8deg);
+		border-radius: 25px;
+	}
+
+	.vitals {
+		position: absolute;
+		top: 32px;
+		left: 32px;
+		font-size: 64px;
+		font-weight: bold;
+		text-stroke: 8px black;
+		color: white;
+		flex-direction: column;
+	}
+
+	> .boosts {
+		position: absolute;
+		bottom: 32px;
+		left: 32px;
+		flex-direction: column;
+		font-size: 64px;
+		font-weight: bold;
+		text-stroke: 8px black;
+		color: white;
+
+		> .boost {
+			transform: skewX(-30deg);
+			width: 500px;
+			height: 64px;
+			background-color: rgb(35, 35, 35);
+			padding: 8px;
+			border-radius: 8px;
+
+
+			> .inner {
+				background-color: rgb(22, 22, 22);
+				flex-grow: 1;
+				
+
+
+				> .fill {
+					height: 100%;
+					background: #ff6a00;//linear-gradient(180deg,rgba(245,255,0,1) 0%, rgba(255,158,0,1) 50%, rgba(255,0,0,1) 100%);
+					border-radius: 12px;
+				}
+			}
+		}
+	}
+}

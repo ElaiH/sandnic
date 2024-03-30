@@ -1,0 +1,495 @@
+{
+  "__guid": "757f6e4a-a8f4-4c12-8953-31491369b168",
+  "GameObjects": [
+    {
+      "__guid": "1fc600d5-d69e-4148-8ae2-c4bb6abf6c8e",
+      "Name": "Player",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SkinnedModelRenderer",
+          "__guid": "5bdb2ca3-a498-439f-914b-ff3c397ee444",
+          "BodyGroups": 341,
+          "CreateBoneObjects": false,
+          "Model": "models/citizen/citizen.vmdl",
+          "RenderType": "On",
+          "Tint": "0,0.11667,1,1"
+        },
+        {
+          "__type": "CitizenAnimationHelper",
+          "__guid": "54923f7c-4849-4234-bfc9-583f1f5df6aa",
+          "BodyWeight": 1,
+          "EyesWeight": 1,
+          "HeadWeight": 1,
+          "Height": 1,
+          "LookAtEnabled": false,
+          "Target": {
+            "_type": "component",
+            "component_id": "5bdb2ca3-a498-439f-914b-ff3c397ee444",
+            "go": "1fc600d5-d69e-4148-8ae2-c4bb6abf6c8e",
+            "component_type": "SkinnedModelRenderer"
+          }
+        },
+        {
+          "__type": "CharacterController",
+          "__guid": "43b63aee-7ec9-459e-a614-acb16d4f6efd",
+          "Acceleration": 10,
+          "Bounciness": 0.3,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "",
+          "Radius": 16,
+          "StepHeight": 18
+        },
+        {
+          "__type": "SonicSpeedMovement",
+          "__guid": "52484bfa-c9d6-43e7-b604-e9a2fe7226fe",
+          "Anim": {
+            "_type": "component",
+            "component_id": "54923f7c-4849-4234-bfc9-583f1f5df6aa",
+            "go": "1fc600d5-d69e-4148-8ae2-c4bb6abf6c8e",
+            "component_type": "CitizenAnimationHelper"
+          },
+          "cam": {
+            "_type": "component",
+            "component_id": "9b920cf8-c8bc-49eb-9019-af4c7ddfa315",
+            "go": "97193a07-bb65-4a0d-9341-67c667086e07",
+            "component_type": "CameraComponent"
+          },
+          "controller": {
+            "_type": "component",
+            "component_id": "43b63aee-7ec9-459e-a614-acb16d4f6efd",
+            "go": "1fc600d5-d69e-4148-8ae2-c4bb6abf6c8e",
+            "component_type": "CharacterController"
+          },
+          "JumpHighet": 900,
+          "mcqueen": 0,
+          "MinRun": 800,
+          "MinSpeed": 250,
+          "movementenable": false,
+          "Run": 800,
+          "Speed": 250,
+          "Spin": 300000,
+          "Boost": 0,
+          "EyePosition": "0,0,59.99998",
+          "FirstPerson": false,
+          "MaxBoost": 100,
+          "MaxRings": 999,
+          "PunchRange": 1000,
+          "PunchStrength": 5,
+          "Rings": 0
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "35b7b88a-1ee7-47dd-9e05-d720efa14937",
+          "Center": "0,0,33.69999",
+          "IsTrigger": false,
+          "Scale": "12.29999,16.40001,70.20003",
+          "Static": false
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "97193a07-bb65-4a0d-9341-67c667086e07",
+          "Name": "Camera",
+          "Position": "-151.356,-10.99184,73.52535",
+          "Rotation": "0,0.1305262,0,0.9914449",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "__guid": "9b920cf8-c8bc-49eb-9019-af4c7ddfa315",
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "All",
+              "FieldOfView": 60,
+              "IsMainCamera": true,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "Priority": 1,
+              "RenderExcludeTags": "",
+              "RenderTags": "",
+              "TargetEye": "None",
+              "Viewport": "0,0,1,1",
+              "ZFar": 10000,
+              "ZNear": 10
+            },
+            {
+              "__type": "Bloom",
+              "__guid": "de4e873c-e0c3-42e9-9afd-059c8c69bffa",
+              "BloomColor": {
+                "color": [
+                  {
+                    "c": "1,1,1,1"
+                  },
+                  {
+                    "t": 1,
+                    "c": "1,1,1,1"
+                  }
+                ],
+                "alpha": []
+              },
+              "BloomCurve": [
+                {
+                  "y": 0.5
+                },
+                {
+                  "x": 1,
+                  "y": 1
+                }
+              ],
+              "Mode": "Additive",
+              "Strength": 0.5,
+              "Threshold": 0.5,
+              "ThresholdWidth": 0.5
+            },
+            {
+              "__type": "Tonemapping",
+              "__guid": "e1ce8449-29b6-40b8-a87e-db4772014e50",
+              "ExposureCompensation": 0,
+              "MaximumExposure": 2,
+              "MinimumExposure": 1,
+              "Rate": 1
+            },
+            {
+              "__type": "Sharpen",
+              "__guid": "e970da67-b349-4160-b758-bc60d8ca45c0",
+              "Scale": 0.2
+            },
+            {
+              "__type": "ScreenPanel",
+              "__guid": "7bb849c7-5c7d-448e-8c46-75e832b860b9",
+              "AutoScreenScale": true,
+              "Opacity": 1,
+              "Scale": 1,
+              "ZIndex": 100
+            },
+            {
+              "__type": "SonicHud",
+              "__guid": "aa3a071b-1f94-438d-b88b-88bcb967fec3",
+              "Sonic": {
+                "_type": "component",
+                "component_id": "52484bfa-c9d6-43e7-b604-e9a2fe7226fe",
+                "go": "1fc600d5-d69e-4148-8ae2-c4bb6abf6c8e",
+                "component_type": "SonicSpeedMovement"
+              }
+            }
+          ]
+        },
+        {
+          "__guid": "362474f2-cc7c-4f7e-9979-0795e34091ff",
+          "Name": "eye",
+          "Enabled": true,
+          "NetworkMode": 2
+        }
+      ]
+    },
+    {
+      "__guid": "1d552f0c-c399-4f42-bc45-d4c48e71b11a",
+      "Name": "2D Skybox",
+      "Tags": "skybox",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "__guid": "fc1ffac5-b91e-463e-978f-e3b8c6137256",
+          "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "EnvmapProbe",
+          "__guid": "ab4243be-712c-46b2-b64c-3955876520fe",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "Feathering": 0.02,
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "48225b68-3b58-4735-bbfc-17823a5d6b82",
+      "Name": "Sun",
+      "Rotation": "0.2391176,-0.8923991,-0.09904572,-0.3696437",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "__guid": "8c9b1cad-42fb-4dd0-abfb-6e7e16634152",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.94419,0.97767,1,1",
+          "Shadows": true,
+          "SkyColor": "0.2532,0.32006,0.35349,1"
+        }
+      ]
+    },
+    {
+      "__guid": "c1d0909e-ec00-4b78-91a3-b96bf21e05ac",
+      "Name": "Plane",
+      "Scale": "100,100,1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "50f4e539-5b13-4375-84ee-c9752834946d",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/dev/gray_grid_8.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "PlaneCollider",
+          "__guid": "658ee2e2-cb3b-4e72-80ff-a99158a227cd",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "100,100",
+          "Static": true
+        }
+      ]
+    },
+    {
+      "__guid": "ec9a7911-4b51-418a-b24e-c96b9f9af39a",
+      "Name": "Rings",
+      "Position": "363.9317,-58.26275,-33.19366",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "__guid": "9ad8ae83-5e8d-45b8-8ccb-3543cec48813",
+          "Name": "Rings",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Children": [
+            {
+              "__guid": "c12101bc-b49b-4849-aa2a-075d4ed5ab5c",
+              "Name": "Ring (1)",
+              "Position": "-75.93173,58.26275,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "516b3809-6621-42f9-b2e8-d2285653d13a",
+              "Name": "Ring (1)",
+              "Position": "-75.93173,90.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "11a2c64f-1bc2-4198-9ded-595f51d61f11",
+              "Name": "Ring (1)",
+              "Position": "-75.93173,26.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "edcb0956-0e3b-4ae6-9d9d-4ec57646af1e",
+              "Name": "Ring",
+              "Position": "-107.9317,58.26275,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "d6f9af03-06c7-4ef8-b17a-e7e28f616a25",
+              "Name": "Ring",
+              "Position": "-107.9317,90.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "3dc7112a-298b-4f8c-8a13-39416d6642c4",
+              "Name": "Ring",
+              "Position": "-107.9317,26.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "29bf7024-7e71-4e30-8fe2-f0a6e0e2ee79",
+              "Name": "Ring (2)",
+              "Position": "-43.93173,58.26275,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "e5a3fc0d-58ac-4723-91a8-4f720d04b75f",
+              "Name": "Ring (2)",
+              "Position": "-43.93173,90.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "89d1f0fc-855c-4b33-88f5-3be21880c78a",
+              "Name": "Ring (2)",
+              "Position": "-43.93173,26.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "00cb695a-1e24-425d-99e5-ce5429edef8d",
+              "Name": "Ring (3)",
+              "Position": "-11.93173,58.26275,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "6b54e871-d7e0-43c2-bdcd-3e5a30556970",
+              "Name": "Ring (3)",
+              "Position": "-11.93173,90.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "72882b43-f7a9-4b21-875e-92db2e013d09",
+              "Name": "Ring (3)",
+              "Position": "-11.93173,26.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "339a5745-0024-43d3-ab61-c0c8daffd05a",
+              "Name": "Ring (4)",
+              "Position": "20.06827,58.26275,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "d1a62862-31b0-4f74-875f-83639d37aa24",
+              "Name": "Ring (4)",
+              "Position": "20.06827,90.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "66943d96-3627-4fbe-9657-237145bc99d9",
+              "Name": "Ring (4)",
+              "Position": "20.06827,26.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "78d57b0a-cf69-49b9-8e48-a83636eaa79a",
+              "Name": "Ring (5)",
+              "Position": "52.06827,58.26275,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "ed13a3c0-3cd8-4898-989c-3f921f447c54",
+              "Name": "Ring (5)",
+              "Position": "52.06827,90.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "d65feee6-4444-4b79-9917-43c7a13001e3",
+              "Name": "Ring (5)",
+              "Position": "52.06827,26.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            }
+          ]
+        },
+        {
+          "__guid": "3fc7bf86-fb43-44d0-a4e5-2cd1b11299d7",
+          "Name": "10",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Children": [
+            {
+              "__guid": "ae3600ca-f338-4b6a-92d3-05df4fb6017e",
+              "Name": "Ring(10)",
+              "Position": "-107.9317,-69.73724,67.19366",
+              "Scale": "2.085156,2.085156,2.085156",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring(10).prefab"
+            },
+            {
+              "__guid": "92307088-3482-4ba3-8938-a8a01282ad44",
+              "Name": "Ring (10)",
+              "Position": "-75.93173,-69.73724,67.19366",
+              "Scale": "2.085156,2.085156,2.085156",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring(10).prefab"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "ui test",
+  "Description": "",
+  "LastSaved": "2024-03-30T21:21:56.2088117\u002B01:00",
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

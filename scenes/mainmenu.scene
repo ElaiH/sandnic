@@ -1,0 +1,137 @@
+{
+  "__guid": "b2181204-1cfd-4e58-a80f-aaaa0a358d33",
+  "GameObjects": [
+    {
+      "__guid": "819a252a-bbe2-4e48-9850-47dea86f4fc2",
+      "Name": "Sun",
+      "Rotation": "-0.1294095,0.2241438,-0.00000001117587,0.965926",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "__guid": "acdcb082-01b7-420e-8947-825f28aefca1",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.94419,0.97767,1,1",
+          "Shadows": true,
+          "SkyColor": "0.2532,0.32006,0.35349,1"
+        }
+      ]
+    },
+    {
+      "__guid": "f374ebb3-dd32-487a-98ca-8ec4d1c0eddc",
+      "Name": "2D Skybox",
+      "Tags": "skybox",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "__guid": "5f0960ce-0c88-4980-9b1b-142e9c3edc8f",
+          "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "EnvmapProbe",
+          "__guid": "b5e77208-8bb7-44ca-8550-022258d1118a",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "Feathering": 0.02,
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "828cfb52-fc7d-4b86-82f7-364612fd5dc4",
+      "Name": "Hud",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "21d7757f-57c8-4b43-8988-63e885b1f383",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        }
+      ]
+    },
+    {
+      "__guid": "ca8771bc-5156-479a-8c82-97c49b80c84d",
+      "Name": "Camera",
+      "Position": "-17739.48,0,0",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "__guid": "efa8b09d-46c0-47a4-9cfc-91c12cdccc60",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 90,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 100000000,
+          "ZNear": 10
+        }
+      ]
+    },
+    {
+      "__guid": "c0a63d9b-0f88-4fbf-84e2-db7196a4822b",
+      "Name": "earthcomplete",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "f20ed5e4-6f20-4bbd-bec9-a702fc96d889",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/mainmenu/earthcomplete.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,0.99"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "mainmenu",
+  "Description": "",
+  "LastSaved": "2024-03-30T21:22:04.8883597\u002B01:00",
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}
