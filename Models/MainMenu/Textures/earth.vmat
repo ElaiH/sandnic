@@ -33,7 +33,7 @@ Layer0
 	TextureNormal "models/mainmenu/textures/mod_earth_nrm.png"
 
 	//---- Roughness ----
-	g_flRoughnessScaleFactor "0.300"
+	g_flRoughnessScaleFactor "0.325"
 	TextureRoughness "Models/MainMenu/Textures/mod_earth_spc.png"
 
 	//---- Texture Coordinates ----

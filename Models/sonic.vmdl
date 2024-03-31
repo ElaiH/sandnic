@@ -118,6 +118,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicIdle.fbx"
 								start_frame = -1
@@ -140,6 +141,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicIdleA.fbx"
 								start_frame = -1
@@ -162,6 +164,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicIdleB.fbx"
 								start_frame = -1
@@ -184,6 +187,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicIdleC.fbx"
 								start_frame = -1
@@ -206,6 +210,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicIdleD.fbx"
 								start_frame = -1
@@ -228,6 +233,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicIdleEA.fbx"
 								start_frame = -1
@@ -250,6 +256,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicIdleEB.fbx"
 								start_frame = -1
@@ -272,6 +279,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicIdleEStart.fbx"
 								start_frame = -1
@@ -301,6 +309,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicJog.fbx"
 								start_frame = -1
@@ -323,6 +332,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicJogL.fbx"
 								start_frame = -1
@@ -345,6 +355,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicJogR.fbx"
 								start_frame = -1
@@ -367,6 +378,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicMoveStopL.fbx"
 								start_frame = -1
@@ -389,6 +401,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicMoveStopR.fbx"
 								start_frame = -1
@@ -425,6 +438,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicRun.fbx"
 								start_frame = -1
@@ -461,6 +475,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicRunL.fbx"
 								start_frame = -1
@@ -497,6 +512,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicRunR.fbx"
 								start_frame = -1
@@ -533,6 +549,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicWalk.fbx"
 								start_frame = -1
@@ -569,6 +586,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicWalkFast.fbx"
 								start_frame = -1
@@ -591,6 +609,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicDash.fbx"
 								start_frame = -1
@@ -613,6 +632,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicDashL.fbx"
 								start_frame = -1
@@ -635,6 +655,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicDashR.fbx"
 								start_frame = -1
@@ -664,6 +685,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicJumpEL.fbx"
 								start_frame = -1
@@ -686,6 +708,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicBall.fbx"
 								start_frame = -1
@@ -708,6 +731,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicJumpC.fbx"
 								start_frame = -1
@@ -730,6 +754,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicJumpDLoop.fbx"
 								start_frame = -1
@@ -752,6 +777,7 @@
 								hidden = false
 								anim_markup_ordered = false
 								disable_compression = false
+								disable_interpolation = false
 								enable_scale = false
 								source_filename = "Animations/SonicJumpDLoopS.fbx"
 								start_frame = -1

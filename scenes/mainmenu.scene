@@ -2,25 +2,6 @@
   "__guid": "b2181204-1cfd-4e58-a80f-aaaa0a358d33",
   "GameObjects": [
     {
-      "__guid": "819a252a-bbe2-4e48-9850-47dea86f4fc2",
-      "Name": "Sun",
-      "Rotation": "-0.1294095,0.2241438,-0.00000001117587,0.965926",
-      "Tags": "light_directional,light",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "DirectionalLight",
-          "__guid": "acdcb082-01b7-420e-8947-825f28aefca1",
-          "FogMode": "Enabled",
-          "FogStrength": 1,
-          "LightColor": "0.94419,0.97767,1,1",
-          "Shadows": true,
-          "SkyColor": "0.2532,0.32006,0.35349,1"
-        }
-      ]
-    },
-    {
       "__guid": "f374ebb3-dd32-487a-98ca-8ec4d1c0eddc",
       "Name": "2D Skybox",
       "Tags": "skybox",
@@ -57,7 +38,6 @@
         {
           "__guid": "3fe49821-eed0-4b2f-889d-4df909398e17",
           "Name": "space",
-          "Position": "-1499.889,1782.777,10000",
           "Enabled": true,
           "NetworkMode": 2,
           "Components": [
@@ -73,6 +53,14 @@
               "__type": "SpinAround",
               "__guid": "496fc183-8d20-4110-ae33-8b32dd312665",
               "SpinAngles": "0,0.4,0"
+            },
+            {
+              "__type": "SphereCollider",
+              "__guid": "3a8b90e2-b025-4368-84ac-442851e40507",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Radius": 10,
+              "Static": true
             }
           ]
         },
@@ -142,22 +130,39 @@
             "_type": "gameobject",
             "go": "9933d9b1-2798-497b-90bc-ffe9bb3ae7c4"
           }
+        },
+        {
+          "__type": "ScreenPanel",
+          "__guid": "9f934474-7719-4cd1-bf04-ba76107fcf1b",
+          "AutoScreenScale": true,
+          "Opacity": 0.34,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "TestUII",
+          "__guid": "701e034a-a768-4d35-b839-d242b244ac57",
+          "__enabled": false,
+          "MyStringValue": "Hello World!"
         }
       ]
     },
     {
-      "__guid": "828cfb52-fc7d-4b86-82f7-364612fd5dc4",
-      "Name": "Hud",
+      "__guid": "84aa040f-9625-47b3-b0d3-323faf112dc7",
+      "Name": "Sun",
+      "Rotation": "-0.5012461,0.3888736,0.08527029,0.7682834",
+      "Tags": "light_directional,light",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ScreenPanel",
-          "__guid": "21d7757f-57c8-4b43-8988-63e885b1f383",
-          "AutoScreenScale": true,
-          "Opacity": 1,
-          "Scale": 1,
-          "ZIndex": 100
+          "__type": "DirectionalLight",
+          "__guid": "f34f4526-964e-4e49-950f-93a2e2d0b1dc",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "1,1,1,1",
+          "Shadows": true,
+          "SkyColor": "0.22353,0.21569,0.19608,1"
         }
       ]
     }
@@ -185,7 +190,7 @@
   },
   "Title": "mainmenu",
   "Description": "",
-  "LastSaved": "2024-03-30T22:31:03.3501155\u002B01:00",
+  "LastSaved": "2024-03-31T15:01:44.0203581\u002B02:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
