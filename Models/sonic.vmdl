@@ -321,6 +321,13 @@
 							{
 								_class = "AnimFile"
 								name = "SonicJogL"
+								children = 
+								[
+									{
+										_class = "AnimStartLoop"
+										start_loop_frame = 17
+									},
+								]
 								activity_name = ""
 								activity_weight = 1
 								weight_list_name = ""
@@ -462,6 +469,10 @@
 										quadratic = false
 										root_bone_name = ""
 										motion_type = "Single"
+									},
+									{
+										_class = "AnimStartLoop"
+										start_loop_frame = 17
 									},
 								]
 								activity_name = ""

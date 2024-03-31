@@ -16,7 +16,7 @@ Layer0
 
 	//---- Color ----
 	g_flModelTintAmount "1.000"
-	g_vColorTint "[0.756863 0.886275 1.000000 0.000000]"
+	g_vColorTint "[0.858824 0.933333 1.000000 0.000000]"
 	TextureColor "Models/MainMenu/Textures/wmap_sea_dif.png"
 
 	//---- Fade ----

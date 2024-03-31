@@ -1214,7 +1214,7 @@
 				{
 					_class = "CBlend2DAnimNode"
 					m_sName = "NEW"
-					m_vecPosition = [ -176.0, 192.0 ]
+					m_vecPosition = [ 688.0, 736.0 ]
 					m_nNodeID = 
 					{
 						m_id = 678912411
@@ -1273,7 +1273,7 @@
 						{
 							_class = "CBlend2DItem"
 							m_tagSpans = [  ]
-							m_sequenceName = "SonicJogR"
+							m_sequenceName = "SonicRunR"
 							m_blendValue = [ 214.0, 214.0 ]
 						},
 					]
@@ -1746,7 +1746,7 @@
 							{
 								m_nodeID = 
 								{
-									m_id = 1611574578
+									m_id = 678912411
 								}
 								m_outputID = 
 								{
@@ -2495,7 +2495,7 @@
 				{
 					_class = "CBlend2DAnimNode"
 					m_sName = "hm"
-					m_vecPosition = [ 688.0, 736.0 ]
+					m_vecPosition = [ -176.0, 192.0 ]
 					m_nNodeID = 
 					{
 						m_id = 1611574578
