@@ -96,7 +96,7 @@
     {
       "__guid": "ca8771bc-5156-479a-8c82-97c49b80c84d",
       "Name": "Camera",
-      "Position": "-22276.14,0,0",
+      "Position": "-5600,0,0",
       "Tags": "maincamera",
       "Enabled": true,
       "NetworkMode": 2,
@@ -144,6 +144,67 @@
           "__guid": "701e034a-a768-4d35-b839-d242b244ac57",
           "__enabled": false,
           "MyStringValue": "Hello World!"
+        },
+        {
+          "__type": "Bloom",
+          "__guid": "81d347c5-3a91-4cdd-978c-43e01752a939",
+          "BloomColor": {
+            "color": [
+              {
+                "c": "1,1,1,1"
+              },
+              {
+                "t": 1,
+                "c": "1,1,1,1"
+              }
+            ]
+          },
+          "BloomCurve": [
+            {
+              "y": 0.5
+            },
+            {
+              "x": 1,
+              "y": 1
+            }
+          ],
+          "Mode": "Additive",
+          "Strength": 6,
+          "Threshold": 0.53,
+          "ThresholdWidth": 0.78
+        },
+        {
+          "__type": "ColorAdjustments",
+          "__guid": "718d321d-5b40-47fd-aeb5-1da9d23dbe2e",
+          "Brightness": 1.45,
+          "Contrast": 1,
+          "HueRotate": 0,
+          "Saturation": 1.02
+        },
+        {
+          "__type": "DepthOfField",
+          "__guid": "0e04976e-79cf-42f3-b0d9-4e768b15df4b",
+          "BackBlur": true,
+          "BlurSize": 24.45,
+          "FocalDistance": 1000,
+          "FrontBlur": false
+        },
+        {
+          "__type": "Tonemapping",
+          "__guid": "62b57df2-ad69-4aeb-b2af-770d4c87b92a",
+          "ExposureCompensation": 0,
+          "MaximumExposure": 1,
+          "MinimumExposure": 0.27,
+          "Rate": 1
+        },
+        {
+          "__type": "Vignette",
+          "__guid": "4210fd5f-c5e4-4ddc-ae68-936ff655a753",
+          "Center": "0.5,0.5",
+          "Color": "0,0,0,1",
+          "Intensity": 0.6,
+          "Roundness": 0,
+          "Smoothness": 1
         }
       ]
     },
@@ -190,7 +251,7 @@
   },
   "Title": "mainmenu",
   "Description": "",
-  "LastSaved": "2024-03-31T15:01:44.0203581\u002B02:00",
+  "LastSaved": "2024-03-31T15:54:27.4985896\u002B02:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
