@@ -19,23 +19,47 @@ public sealed class SonicSpeedMovement : Component
 	[Category( "Variables" )]
 	public float MaxBoost { get; set; } = 100f;
 	public TimeSince TimeAlive { get; set; } = 0f;
-	
-	[Property] public float Speed;
-	[Property] public float MinSpeed;
-	[Property] public float Run;
-	[Property] public float MinRun;
-	[Property] public float JumpHighet;
-	[Property] public float Spin;
+	[Category( "Stats" )]
+	[Property] public float Speed = 200;
+
+	[Category( "Stats" )]
+	[Property] public float MinSpeed = 200;
+
+	[Category( "Stats" )]
+	[Property] public float Run = 800;
+
+	[Category( "Stats" )]
+	[Property] public float MinRun = 800;
+
+	[Category( "Stats" )]
+	[Property] public float JumpHighet = 900;
+
+	[Category( "Stats" )]
+	[Property] public float Spin = 300000;
+
+	[Category( "Components" )]
 	[Property] public CitizenAnimationHelper Anim;
+
+	[Category( "Components" )]
 	[Property] public CharacterController controller;
+
+	[Category( "Components" )]
 	[Property] public CameraComponent cam;
+
+	[Category( "IguessDebug" )]
 	[Property] bool movementenable;
+
+	[Category( "IguessDebug" )]
 	[Property] float mcqueen;
+
+
+	[Category( "Stats" )]
 	[Property]public float PunchStrength { get; set; } = 1f;
 	//[Property]public float PunchCooldown { get; set; } = 0.5f;
+
+	[Category( "Stats" )]
 	[Property]public float PunchRange { get; set; } = 50f;
-	[Property]
-	public Vector3 EyePosition { get; set; }
+	[Property]public Vector3 EyePosition { get; set; }
 	TimeSince _lastPunch;
 	Transform _camthing;
 
@@ -43,7 +67,6 @@ public sealed class SonicSpeedMovement : Component
 	bool momentum;
 
 	//CamStuff
-	[Property] public bool FirstPerson { get; set; }
 	[Sync]
 	public Angles EyeAngles {  get; set; }
 

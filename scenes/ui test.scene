@@ -10,11 +10,11 @@
         {
           "__type": "SkinnedModelRenderer",
           "__guid": "5bdb2ca3-a498-439f-914b-ff3c397ee444",
-          "BodyGroups": 341,
+          "BodyGroups": 18446744073709551615,
           "CreateBoneObjects": false,
-          "Model": "models/citizen/citizen.vmdl",
+          "Model": "models/sonic.vmdl",
           "RenderType": "On",
-          "Tint": "0,0.11667,1,1"
+          "Tint": "1,1,1,1"
         },
         {
           "__type": "CitizenAnimationHelper",
@@ -488,7 +488,7 @@
   },
   "Title": "ui test",
   "Description": "",
-  "LastSaved": "2024-03-30T21:21:56.2088117\u002B01:00",
+  "LastSaved": "2024-04-01T22:42:58.6707864\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
