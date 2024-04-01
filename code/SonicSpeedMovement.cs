@@ -116,7 +116,7 @@ public sealed class SonicSpeedMovement : Component
 			if ( Input.Down( "Duck" ) )
 			{
 				//animation here
-				Anim.TriggerJump();
+				Anim.Components.Get<SkinnedModelRenderer>().Set( "b_ball", true );
 				movementenable = false;
 				cam.FieldOfView -= Time.Delta * 10;
 				if ( cam.FieldOfView < 30 )
@@ -134,7 +134,8 @@ public sealed class SonicSpeedMovement : Component
 				controller.Accelerate( wishVelocity );
 
 				controller.Move();
-				Anim.TriggerJump();
+
+				Anim.Components.Get<SkinnedModelRenderer>().Set( "b_ball", false );
 
 				movementenable = true;
 				cam.FieldOfView = 90;

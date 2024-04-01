@@ -300,10 +300,14 @@
           "Run": 800,
           "Speed": 250,
           "Spin": 300000,
+          "Boost": 0,
           "EyePosition": "0,0,58.8",
           "FirstPerson": false,
+          "MaxBoost": 100,
+          "MaxRings": 999,
           "PunchRange": 1000,
-          "PunchStrength": 5
+          "PunchStrength": 5,
+          "Rings": 0
         },
         {
           "__type": "BoxCollider",
@@ -744,7 +748,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-30T14:39:15.4584804\u002B03:00",
+  "LastSaved": "2024-04-01T22:34:39.3863045\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

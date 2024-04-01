@@ -13,8 +13,7 @@
           "MapName": "maps/teststage.vmap",
           "UseMapFromLaunch": false
         }
-      ],
-      "Children": []
+      ]
     },
     {
       "__guid": "a8968f22-9f2c-48cc-81a8-4b7781151cc6",
@@ -86,10 +85,14 @@
           "Run": 800,
           "Speed": 250,
           "Spin": 300000,
+          "Boost": 0,
           "EyePosition": "0,0,59.99998",
           "FirstPerson": false,
+          "MaxBoost": 100,
+          "MaxRings": 999,
           "PunchRange": 1000,
-          "PunchStrength": 5
+          "PunchStrength": 5,
+          "Rings": 0
         },
         {
           "__type": "BoxCollider",
@@ -253,7 +256,7 @@
   },
   "Title": "test stage",
   "Description": "",
-  "LastSaved": "2024-03-30T10:00:48.799595\u002B03:00",
+  "LastSaved": "2024-04-01T21:24:57.9189906\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
