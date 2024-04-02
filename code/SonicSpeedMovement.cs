@@ -1,11 +1,15 @@
 using Sandbox;
 using Sandbox.Citizen;
 using Sandbox.VR;
+using System.Numerics;
 using System.Runtime;
+using static Sandbox.Utility.DataProgress;
 
-public sealed class SonicSpeedMovement : Component
+public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 {
 	//Variables
+	public bool Jump = false;
+
 	[Property]
 	[Category("Variables")]
 	public int Rings { get; set; } = 0;
@@ -76,7 +80,25 @@ public sealed class SonicSpeedMovement : Component
 		Run = MinRun;
 		_camthing = cam.Transform.Local;
 	}
-
+	/*
+	public void aligned()
+	{
+		var hit = Scene.Trace
+			.FromTo( Transform.Position, EyeAngles.Forward)
+			.Size( 10f )
+			.WithoutTags( "player" )
+			.IgnoreGameObjectHierarchy( GameObject )
+			.Run();
+		if(hit.Hit)
+		{
+			Log.Info( hit.Normal );
+			//GameObject.Components.Get<Rigidbody>().Velocity = hit.Normal
+			Transform.Rotation = new Angles( hit.Normal * 10 );
+		}
+	}
+	*/
+	
+	
 	protected override void OnEnabled()
 	{
 		base.OnEnabled();
@@ -104,6 +126,7 @@ public sealed class SonicSpeedMovement : Component
 	}
 	protected override void OnUpdate()
 	{
+		//aligned();
 		//cam.Transform.Local = _camthing.RotateAround( EyePosition, EyeAngles.WithYaw(0f) );
 
 		//cam.Transform.Position = new Vector3( Transform.Position.x - 180, Transform.Position.y, Transform.Position.z + 85 );
@@ -239,6 +262,7 @@ public sealed class SonicSpeedMovement : Component
 
 			if ( controller.IsOnGround )
 			{
+				Jump = false;
 				controller.Acceleration = 10f;
 				controller.ApplyFriction( 5f, 20f );
 
@@ -252,6 +276,14 @@ public sealed class SonicSpeedMovement : Component
 			}
 			else
 			{
+				if ( Jump == false )
+				{
+					if ( Input.Pressed( "Jump" ) )
+					{
+						controller.Punch( Vector3.Up * JumpHighet );
+						Jump = true;
+					}
+				}
 				controller.Acceleration = 5f;
 				controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
 				Scene.TimeScale = 0.7f;

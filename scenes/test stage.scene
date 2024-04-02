@@ -13,11 +13,13 @@
           "MapName": "maps/teststage.vmap",
           "UseMapFromLaunch": false
         }
-      ]
+      ],
+      "Children": []
     },
     {
       "__guid": "a8968f22-9f2c-48cc-81a8-4b7781151cc6",
       "Name": "Player",
+      "Rotation": "0.0000002235174,0.00000001131335,1,-0.00000004222196",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -87,7 +89,6 @@
           "Spin": 300000,
           "Boost": 0,
           "EyePosition": "0,0,59.99998",
-          "FirstPerson": false,
           "MaxBoost": 100,
           "MaxRings": 999,
           "PunchRange": 1000,
@@ -110,10 +111,16 @@
       ],
       "Children": [
         {
+          "__guid": "9c136ca3-b085-4b1c-88ac-c252aecbb00e",
+          "Name": "eye",
+          "Enabled": true,
+          "NetworkMode": 2
+        },
+        {
           "__guid": "af0bb7d0-d6d7-4d35-ae82-93f3770d2043",
           "Name": "Camera",
           "Position": "-151.356,-10.99184,73.52535",
-          "Rotation": "0,0.1305262,0,0.9914449",
+          "Rotation": "0,0.1305262,0.000000000000001665335,0.9914449",
           "Enabled": true,
           "NetworkMode": 2,
           "Components": [
@@ -177,12 +184,6 @@
               "Scale": 0.2
             }
           ]
-        },
-        {
-          "__guid": "9c136ca3-b085-4b1c-88ac-c252aecbb00e",
-          "Name": "eye",
-          "Enabled": true,
-          "NetworkMode": 2
         }
       ]
     },
@@ -231,6 +232,97 @@
           "SkyColor": "0.2532,0.32006,0.35349,1"
         }
       ]
+    },
+    {
+      "__guid": "c07bfe07-8c17-4fdf-b926-f3325983f09e",
+      "Name": "Cube",
+      "Position": "272.7216,-1673.429,38.36499",
+      "Tags": "player",
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "726eaad2-e239-4d78-a6d4-e0baa2404a71",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "d2211c0a-40d7-4bbf-acc6-09df99f765ed",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "36687f37-0fb1-4b3d-8f5b-9647e9437636",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "CharacterController",
+          "__guid": "aa1c5c74-5d2e-4e4d-b6c9-527e919e5938",
+          "Acceleration": 10,
+          "Bounciness": 0.3,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "",
+          "Radius": 16,
+          "StepHeight": 18
+        },
+        {
+          "__type": "Aligned",
+          "__guid": "a040d1e7-8c92-4998-a8c7-8da886330e37",
+          "rb": {
+            "_type": "component",
+            "component_id": "d2211c0a-40d7-4bbf-acc6-09df99f765ed",
+            "go": "c07bfe07-8c17-4fdf-b926-f3325983f09e",
+            "component_type": "Rigidbody"
+          }
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "27698eae-c2c5-48e2-ab61-5d2280d8d809",
+          "Name": "Camera",
+          "Position": "-564.0182,0,44.16345",
+          "Tags": "maincamera",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "__guid": "f6c26ac1-27fa-4c0d-90de-409b75a046ad",
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "All",
+              "FieldOfView": 60,
+              "IsMainCamera": true,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "Priority": 1,
+              "RenderExcludeTags": "",
+              "RenderTags": "",
+              "TargetEye": "None",
+              "Viewport": "0,0,1,1",
+              "ZFar": 10000,
+              "ZNear": 10
+            },
+            {
+              "__type": "Aligned",
+              "__guid": "251fa85c-24d1-48f4-a925-1bcc6daad87e"
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -256,7 +348,7 @@
   },
   "Title": "test stage",
   "Description": "",
-  "LastSaved": "2024-04-01T21:24:57.9189906\u002B03:00",
+  "LastSaved": "2024-04-02T18:43:15.5784737\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

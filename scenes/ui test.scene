@@ -73,7 +73,6 @@
           "Spin": 300000,
           "Boost": 0,
           "EyePosition": "0,0,59.99998",
-          "FirstPerson": false,
           "MaxBoost": 100,
           "MaxRings": 999,
           "PunchRange": 1000,
@@ -488,7 +487,7 @@
   },
   "Title": "ui test",
   "Description": "",
-  "LastSaved": "2024-04-01T22:42:58.6707864\u002B03:00",
+  "LastSaved": "2024-04-02T18:49:06.1303741\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

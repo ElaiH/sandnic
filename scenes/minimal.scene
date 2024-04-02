@@ -302,7 +302,6 @@
           "Spin": 300000,
           "Boost": 0,
           "EyePosition": "0,0,58.8",
-          "FirstPerson": false,
           "MaxBoost": 100,
           "MaxRings": 999,
           "PunchRange": 1000,
@@ -314,7 +313,7 @@
           "__guid": "6aaf7778-245b-47af-82ad-7ea17540472d",
           "Center": "0,0,29",
           "IsTrigger": false,
-          "Scale": "12.29999,16.40001,70.20003",
+          "Scale": "24.6,30.60003,78.3",
           "Static": false
         },
         {
@@ -748,7 +747,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-01T22:40:11.2801057\u002B03:00",
+  "LastSaved": "2024-04-02T18:48:06.8532612\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
