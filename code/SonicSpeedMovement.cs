@@ -1,6 +1,7 @@
 using Sandbox;
 using Sandbox.Citizen;
 using Sandbox.VR;
+using System.Diagnostics;
 using System.Numerics;
 using System.Runtime;
 using static Sandbox.Utility.DataProgress;
@@ -80,25 +81,35 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 		Run = MinRun;
 		_camthing = cam.Transform.Local;
 	}
-	/*
+
 	public void aligned()
 	{
 		var hit = Scene.Trace
-			.FromTo( Transform.Position, EyeAngles.Forward)
+			.FromTo( Transform.Position, Vector3.Down * Vector3.Backward + Vector3.Forward * Vector3.Up )
 			.Size( 10f )
 			.WithoutTags( "player" )
 			.IgnoreGameObjectHierarchy( GameObject )
 			.Run();
-		if(hit.Hit)
+
+		if ( hit.Hit )
 		{
-			Log.Info( hit.Normal );
-			//GameObject.Components.Get<Rigidbody>().Velocity = hit.Normal
-			Transform.Rotation = new Angles( hit.Normal * 10 );
+
+			//if ( controller.IsOnGround )
+			//{
+
+				Log.Info( hit.Direction );
+				controller.Velocity = hit.Direction;
+				Transform.Rotation = Quaternion.Lerp(Transform.Rotation, Quaternion.CreateFromYawPitchRoll( hit.Direction.x, hit.Direction.y, hit.Direction.z ), 1f );
+				controller.IsOnGround = true;
+				Anim.IsGrounded = true;
+				//Scene.PhysicsWorld.Gravity = 0;
+			//}
+
 		}
 	}
-	*/
-	
-	
+
+
+
 	protected override void OnEnabled()
 	{
 		base.OnEnabled();
@@ -126,21 +137,41 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 	}
 	protected override void OnUpdate()
 	{
-		//aligned();
+		aligned();
+		//Log.Info( Scene.PhysicsWorld.Gravity);
 		//cam.Transform.Local = _camthing.RotateAround( EyePosition, EyeAngles.WithYaw(0f) );
 
 		//cam.Transform.Position = new Vector3( Transform.Position.x - 180, Transform.Position.y, Transform.Position.z + 85 );
+
+		//EyeAngles = EyeAngles.WithPitch( MathX.Clamp( EyeAngles.pitch, -80f, 80f ) );
+		//Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
+
+		/*if ( cam != null )
+		{
+			var cameraTransform = _camthing.RotateAround( EyePosition, EyeAngles.WithYaw( 0f ) );
+			var cameraPosition = Transform.Local.PointToWorld( cameraTransform.Position );
+			var cameraTrace = Scene.Trace.Ray( EyeWorldPosition, cameraPosition )
+				.Size( 5f )
+				.IgnoreGameObjectHierarchy( GameObject )
+				.WithoutTags( "player" )
+				.Run();
+
+			cam.Transform.Position = cameraTrace.EndPosition;
+			cam.Transform.LocalRotation = cameraTransform.Rotation;
+		}
+		*/
 
 		if (controller.IsOnGround && mcqueen > 255 )
 		{
 			EyeAngles += Input.AnalogMove;
 			EyeAngles += Input.AnalogLook;
-			Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
+			//Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
+			//aligned();
 		}
 		else
 		{
 			EyeAngles += Input.AnalogLook;
-			Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
+			//Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
 			//cam.Transform.Local = _camthing.RotateAround( EyePosition, EyeAngles.WithRoll( 0f ) );
 		}
 
@@ -172,7 +203,6 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 			}
 			else if ( Input.Released( "Duck" ) )
 			{
-				//cam.FieldOfView = 120;
 				if ( controller == null ) return;
 
 				var wishVelocity = Vector3.Forward * Spin * Transform.Rotation;
@@ -284,10 +314,12 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 						Jump = true;
 					}
 				}
+				//Scene.TimeScale = 0.7f;
 				controller.Acceleration = 5f;
-				controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
-				Scene.TimeScale = 0.7f;
+				//controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
 			}
+
+
 
 			controller.Move();
 			if ( Anim != null )
