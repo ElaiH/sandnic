@@ -85,7 +85,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 	public void aligned()
 	{
 		var hit = Scene.Trace
-			.FromTo( Transform.Position, Vector3.Down * Vector3.Backward + Vector3.Forward * Vector3.Up )
+			.FromTo( Transform.Position, Vector3.Down * Vector3.Forward )
 			.Size( 10f )
 			.WithoutTags( "player" )
 			.IgnoreGameObjectHierarchy( GameObject )
@@ -96,16 +96,36 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 
 			//if ( controller.IsOnGround )
 			//{
-
-				Log.Info( hit.Direction );
-				controller.Velocity = hit.Direction;
-				Transform.Rotation = Quaternion.Lerp(Transform.Rotation, Quaternion.CreateFromYawPitchRoll( hit.Direction.x, hit.Direction.y, hit.Direction.z ), 1f );
-				controller.IsOnGround = true;
+			Log.Info( hit.Direction );
+			if ( hit.Distance <= 1200 )
+			{
+				//Scene.PhysicsWorld.Gravity = new Vector3( 0, 0, -850 );
+				controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
+				Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
+			}
+			else if ( hit.Distance >= 1200 )
+			{
+				//Scene.PhysicsWorld.Gravity = new Vector3( 0, 0, -850 );
+				//Scene.PhysicsWorld.Gravity = hit.Direction * 100;
+				controller.Velocity = hit.Distance / 100;
+				//controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
+				Transform.Rotation = Quaternion.Lerp( Transform.Rotation, Quaternion.CreateFromYawPitchRoll( hit.Direction.x, 0, EyeAngles.yaw / 30 ), 1f );
+				//controller.IsOnGround = true;
 				Anim.IsGrounded = true;
-				//Scene.PhysicsWorld.Gravity = 0;
+				//controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
+			}
+			if (!controller.IsOnGround)
+			{
+				//controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
+				//Scene.PhysicsWorld.Gravity = 10f;
+			}
 			//}
 
 		}
+		else
+		{
+			Scene.PhysicsWorld.Gravity = 10;
+		}	
 	}
 
 
@@ -137,7 +157,11 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 	}
 	protected override void OnUpdate()
 	{
+		//if(mcqueen > 1000)
+		//{
+		//Log.Info( Scene.PhysicsWorld.Gravity );
 		aligned();
+		//}
 		//Log.Info( Scene.PhysicsWorld.Gravity);
 		//cam.Transform.Local = _camthing.RotateAround( EyePosition, EyeAngles.WithYaw(0f) );
 
@@ -316,7 +340,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 				}
 				//Scene.TimeScale = 0.7f;
 				controller.Acceleration = 5f;
-				//controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
+				controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
 			}
 
 

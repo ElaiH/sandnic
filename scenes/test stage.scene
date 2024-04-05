@@ -19,7 +19,7 @@
     {
       "__guid": "a8968f22-9f2c-48cc-81a8-4b7781151cc6",
       "Name": "Player",
-      "Rotation": "0.0000002235174,0.00000001131335,1,-0.00000004222196",
+      "Rotation": "-0.0000002235174,0.000000000000009770256,-1,-0.00000004371139",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -348,7 +348,7 @@
   },
   "Title": "test stage",
   "Description": "",
-  "LastSaved": "2024-04-04T21:23:52.229537\u002B03:00",
+  "LastSaved": "2024-04-05T13:12:49.5382694\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
