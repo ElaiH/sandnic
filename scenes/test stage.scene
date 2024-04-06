@@ -26,11 +26,11 @@
         {
           "__type": "SkinnedModelRenderer",
           "__guid": "30c25047-7c8b-403d-a3f5-d234ccc9b1ca",
-          "BodyGroups": 341,
+          "BodyGroups": 18446744073709551615,
           "CreateBoneObjects": false,
-          "Model": "models/citizen/citizen.vmdl",
+          "Model": "models/sonic.vmdl",
           "RenderType": "On",
-          "Tint": "0,0.11667,1,1"
+          "Tint": "1,1,1,1"
         },
         {
           "__type": "CitizenAnimationHelper",
@@ -50,6 +50,7 @@
         {
           "__type": "CharacterController",
           "__guid": "c083aaae-12cb-40e2-b1f7-b21b8ea84cdc",
+          "__enabled": false,
           "Acceleration": 10,
           "Bounciness": 0.3,
           "GroundAngle": 45,
@@ -66,6 +67,10 @@
             "component_id": "4d46bcf1-7b15-42fc-aeaa-6a8e54e843f0",
             "go": "a8968f22-9f2c-48cc-81a8-4b7781151cc6",
             "component_type": "CitizenAnimationHelper"
+          },
+          "boomparticale": {
+            "_type": "gameobject",
+            "prefab": "particles/burst.prefab"
           },
           "cam": {
             "_type": "component",
@@ -85,6 +90,10 @@
           "MinSpeed": 250,
           "movementenable": false,
           "Run": 800,
+          "runparticale": {
+            "_type": "gameobject",
+            "prefab": "particles/spray.prefab"
+          },
           "Speed": 250,
           "Spin": 300000,
           "Boost": 0,
@@ -107,6 +116,38 @@
           "__type": "CoinManager",
           "__guid": "58758e28-3b54-4196-bbda-e2e4e87ba973",
           "Coins": 0
+        },
+        {
+          "__type": "Tryingstuffandimdead",
+          "__guid": "d9e2de67-e77f-44cc-9471-b95d31934b56",
+          "__enabled": false,
+          "gravity": 50,
+          "grounddistance": 1.1,
+          "jumpforce": 800,
+          "rb": {
+            "_type": "component",
+            "component_id": "4c6839ef-bd63-4b4f-be0c-22f506d91d29",
+            "go": "a8968f22-9f2c-48cc-81a8-4b7781151cc6",
+            "component_type": "Rigidbody"
+          },
+          "speed": 250
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "4c6839ef-bd63-4b4f-be0c-22f506d91d29",
+          "__enabled": false,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {
+            "Pitch": true,
+            "Yaw": true,
+            "Roll": true
+          },
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
         }
       ],
       "Children": [
@@ -203,14 +244,21 @@
         {
           "__type": "EnvmapProbe",
           "__guid": "0d659a77-cf88-4689-b589-480719d3ae10",
+          "Texture": "textures/cubemaps/default2.vtex",
           "Bounds": {
             "Mins": "-512,-512,-512",
             "Maxs": "512,512,512"
           },
+          "DelayBetweenUpdates": 0.1,
           "Feathering": 0.02,
+          "FrameInterval": 5,
+          "MaxDistance": 512,
           "Projection": "Sphere",
-          "Texture": "textures/cubemaps/default2.vtex",
-          "TintColor": "1,1,1,1"
+          "RenderDynamically": false,
+          "TintColor": "1,1,1,1",
+          "UpdateStrategy": "OnEnabled",
+          "ZFar": 4096,
+          "ZNear": 16
         }
       ]
     },
@@ -348,7 +396,7 @@
   },
   "Title": "test stage",
   "Description": "",
-  "LastSaved": "2024-04-05T13:12:49.5382694\u002B03:00",
+  "LastSaved": "2024-04-06T21:29:48.1783193\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

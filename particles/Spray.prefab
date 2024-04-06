@@ -1,0 +1,175 @@
+{
+  "RootObject": {
+    "__guid": "206107f6-8f4d-4d1c-bcf9-e3e770f4f18e",
+    "Name": "spray",
+    "Tags": "particles",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "ParticleEffect",
+        "__guid": "e5e2f18a-71b3-4943-8438-a31d3f22998f",
+        "Alpha": {
+          "Type": "Curve",
+          "CurveA": [
+            {
+              "y": 1
+            },
+            {
+              "x": 0.5
+            },
+            {
+              "x": 1,
+              "y": 1
+            }
+          ],
+          "Constants": "1,0,0,0"
+        },
+        "ApplyColor": true,
+        "ApplyRotation": false,
+        "ApplyShape": true,
+        "Bounce": {
+          "Constants": "1,0,0,0"
+        },
+        "Brightness": {
+          "Constants": "1,0,0,0"
+        },
+        "Bumpiness": {},
+        "Collision": false,
+        "CollisionRadius": 1,
+        "Damping": {},
+        "DieOnCollisionChance": {},
+        "Force": false,
+        "ForceDirection": "0,0,-200",
+        "ForceScale": {
+          "Constants": "1,0,0,0"
+        },
+        "Friction": {
+          "Constants": "1,0,0,0"
+        },
+        "Gradient": {
+          "Type": "Range",
+          "Evaluation": "Particle",
+          "GradientA": {
+            "color": [
+              {
+                "t": 0.5,
+                "c": "1,1,1,1"
+              }
+            ],
+            "alpha": []
+          },
+          "GradientB": {
+            "color": [
+              {
+                "t": 0.5,
+                "c": "1,1,1,1"
+              }
+            ],
+            "alpha": []
+          },
+          "ConstantA": "0.98515,0.92604,0,1",
+          "ConstantB": "1,0.22,0,1"
+        },
+        "Lifetime": {
+          "Type": "Range",
+          "Evaluation": "Particle",
+          "Constants": "1,2,0,0"
+        },
+        "MaxParticles": 4628,
+        "PerParticleTimeScale": {
+          "Constants": "1,0.4,0,0"
+        },
+        "PreWarm": 0,
+        "PushStrength": {},
+        "Roll": {
+          "Type": "Range",
+          "Evaluation": "Particle",
+          "Constants": "0,360,0,0"
+        },
+        "Scale": {
+          "Type": "Curve",
+          "CurveA": {
+            "rangey": "0,3",
+            "frames": [
+              {
+                "y": 1
+              },
+              {
+                "x": 0.5
+              },
+              {
+                "x": 1,
+                "y": 1
+              }
+            ]
+          },
+          "Constants": "1,0,0,0"
+        },
+        "SequenceId": {},
+        "SequenceSpeed": {
+          "Constants": "1,0,0,0"
+        },
+        "SequenceTime": {
+          "Constants": "1,0,0,0"
+        },
+        "SheetSequence": false,
+        "Space": "World",
+        "StartVelocity": {
+          "Type": "Range",
+          "Evaluation": "Particle",
+          "Constants": "100,200,0,0"
+        },
+        "Stretch": {},
+        "TimeScale": 1,
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "ParticleSpriteRenderer",
+        "__guid": "7bfc6f9c-10e4-4b47-be5c-32c80ced74e4",
+        "Additive": false,
+        "BlurAmount": 0.5,
+        "BlurOpacity": 0.91,
+        "BlurSpacing": 0.73,
+        "DepthFeather": 0,
+        "FaceVelocity": false,
+        "FogStrength": 0.97,
+        "LeadingTrail": true,
+        "MotionBlur": false,
+        "Opaque": false,
+        "RotationOffset": 0,
+        "Scale": 1,
+        "Shadows": false,
+        "SortMode": "Unsorted",
+        "Texture": "materials/dev/dev_metal_rough60_vmat_g_tcolor_a0ce44b8.generated.vtex"
+      },
+      {
+        "__type": "ParticleConeEmitter",
+        "__guid": "c1925ea5-b4ce-4b11-8da3-29a59d24fb72",
+        "Burst": 0,
+        "ConeAngle": 14.95,
+        "ConeFar": 50,
+        "ConeNear": 0,
+        "Delay": 0,
+        "DestroyOnEnd": true,
+        "Duration": 3,
+        "InVolume": false,
+        "Loop": true,
+        "OnEdge": false,
+        "Rate": 500
+      },
+      {
+        "__type": "Destroyon",
+        "__guid": "2d99ad33-48b3-4347-a59f-052218cde18f",
+        "time": 0
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}
