@@ -7,7 +7,7 @@ public sealed class Destroyon : Component
 	{
 		time = 100 * Time.Delta;
 		Log.Info( time );
-		if(time > 2)
+		if(time > 1)
 		{
 			GameObject.Destroy();
 		}

@@ -48,18 +48,6 @@
           }
         },
         {
-          "__type": "CharacterController",
-          "__guid": "c083aaae-12cb-40e2-b1f7-b21b8ea84cdc",
-          "__enabled": false,
-          "Acceleration": 10,
-          "Bounciness": 0.3,
-          "GroundAngle": 45,
-          "Height": 64,
-          "IgnoreLayers": "",
-          "Radius": 16,
-          "StepHeight": 18
-        },
-        {
           "__type": "SonicSpeedMovement",
           "__guid": "0f013e09-bafe-47ea-bcb8-b646f1c54e55",
           "Anim": {
@@ -80,7 +68,7 @@
           },
           "controller": {
             "_type": "component",
-            "component_id": "c083aaae-12cb-40e2-b1f7-b21b8ea84cdc",
+            "component_id": "2cc5129d-9eb0-439d-bc0d-d6e2fe5d0e80",
             "go": "a8968f22-9f2c-48cc-81a8-4b7781151cc6",
             "component_type": "CharacterController"
           },
@@ -118,36 +106,15 @@
           "Coins": 0
         },
         {
-          "__type": "Tryingstuffandimdead",
-          "__guid": "d9e2de67-e77f-44cc-9471-b95d31934b56",
-          "__enabled": false,
-          "gravity": 50,
-          "grounddistance": 1.1,
-          "jumpforce": 800,
-          "rb": {
-            "_type": "component",
-            "component_id": "4c6839ef-bd63-4b4f-be0c-22f506d91d29",
-            "go": "a8968f22-9f2c-48cc-81a8-4b7781151cc6",
-            "component_type": "Rigidbody"
-          },
-          "speed": 250
-        },
-        {
-          "__type": "Rigidbody",
-          "__guid": "4c6839ef-bd63-4b4f-be0c-22f506d91d29",
-          "__enabled": false,
-          "AngularDamping": 0,
-          "Gravity": true,
-          "LinearDamping": 0,
-          "Locking": {
-            "Pitch": true,
-            "Yaw": true,
-            "Roll": true
-          },
-          "MassOverride": 0,
-          "MotionEnabled": true,
-          "RigidbodyFlags": 0,
-          "StartAsleep": false
+          "__type": "CharacterController",
+          "__guid": "2cc5129d-9eb0-439d-bc0d-d6e2fe5d0e80",
+          "Acceleration": 10,
+          "Bounciness": 0.3,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "",
+          "Radius": 16,
+          "StepHeight": 18
         }
       ],
       "Children": [
@@ -396,7 +363,7 @@
   },
   "Title": "test stage",
   "Description": "",
-  "LastSaved": "2024-04-06T21:29:48.1783193\u002B03:00",
+  "LastSaved": "2024-04-08T18:57:30.6079273\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

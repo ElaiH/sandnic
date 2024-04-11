@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "65d85141-5338-4913-aac7-ec74cd897f44",
+    "__guid": "35fabb80-f151-4fe4-8a8e-bd81cdb6e7cc",
     "Name": "burst",
     "Tags": "particles",
     "Enabled": true,
@@ -8,7 +8,7 @@
     "Components": [
       {
         "__type": "ParticleEffect",
-        "__guid": "145779cb-60e4-42d2-a91d-3ae5ae6964ff",
+        "__guid": "9d0cf854-16a9-476f-834c-30d0545ef358",
         "Alpha": {
           "Type": "Curve",
           "CurveA": [
@@ -21,7 +21,7 @@
           ],
           "Constants": "1,0,0,0"
         },
-        "ApplyColor": false,
+        "ApplyColor": true,
         "ApplyRotation": false,
         "ApplyShape": true,
         "Bounce": {
@@ -119,11 +119,11 @@
         },
         "Stretch": {},
         "TimeScale": 1,
-        "Tint": "1,1,1,1"
+        "Tint": "0.27777,0.27777,0.99535,1"
       },
       {
         "__type": "ParticleSpriteRenderer",
-        "__guid": "ceb92c4a-326d-4e25-8316-c2d56434aa9b",
+        "__guid": "82986cb6-71ae-484c-9e21-7ea81431744f",
         "Additive": false,
         "BlurAmount": 0.5,
         "BlurOpacity": 0.91,
@@ -142,7 +142,7 @@
       },
       {
         "__type": "ParticleSphereEmitter",
-        "__guid": "987c7f9c-0752-48e3-9340-1b7252442919",
+        "__guid": "847fe720-73ec-48bc-9967-5aa6199d4551",
         "Burst": 1000,
         "Delay": 0,
         "DestroyOnEnd": true,
@@ -155,7 +155,7 @@
       },
       {
         "__type": "Destroyon",
-        "__guid": "fe12ba3f-24f9-4327-bd37-a39cea3ab591",
+        "__guid": "081fc0af-b1a2-4206-a5eb-53a04efe67c3",
         "time": 0
       }
     ],

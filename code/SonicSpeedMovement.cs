@@ -90,7 +90,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 	public void aligned()
 	{
 		var hit = Scene.Trace
-			.FromTo( Transform.Position, Vector3.Down )
+			.FromTo( Transform.Position, Vector3.Forward)
 			.Size( 10f )
 			.WithoutTags( "player" )
 			.IgnoreGameObjectHierarchy( GameObject )
@@ -110,46 +110,63 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 			//}
 			//else if ( hit.Distance >= 1200 )
 			//{
-			if ( controller.IsOnGround )
+
+			//Scene.PhysicsWorld.Gravity = new Vector3( 0, 0, -850 );
+
+			//controller.Velocity = hit.Distance / 100 + Scene.PhysicsWorld.Gravity;
+
+			//controller.IsOnGround = true;
+			//Anim.IsGrounded = true;
+			//controller.Velocity += Scene.PhysicsWorld.Gravity * Transform.Rotation / 100;
+			//if (hit.Direction.x != 0)
+			//{
+
+			//controller.Velocity = hit.Direction * Vector3.Forward;
+
+
+			controller.IsOnGround = true;
+			Anim.IsGrounded = true;
+
+			if (controller.IsOnGround)
 			{
-				//Scene.PhysicsWorld.Gravity = new Vector3( 0, 0, -850 );
-
-				//controller.Velocity = hit.Distance / 100 + Scene.PhysicsWorld.Gravity;
-				
-				//controller.IsOnGround = true;
-				//Anim.IsGrounded = true;
-				//controller.Velocity += Scene.PhysicsWorld.Gravity * Transform.Rotation / 100;
-				if (hit.Direction.x != 0)
-				{
-					Transform.Rotation = Quaternion.Lerp( Transform.Rotation, Quaternion.CreateFromYawPitchRoll( hit.Direction.x - 0.5f, hit.Direction.y, EyeAngles.yaw / 100 ), 1f );
-					controller.Velocity = hit.Direction * Vector3.Forward * Vector3.Up;
-					//Scene.PhysicsWorld.Gravity *= Transform.Rotation;
-				}
-				else
-				{
-					controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
-					Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
-					EyeAngles += Input.AnalogMove;
-					/*EyeAngles = EyeAngles.WithPitch( MathX.Clamp( EyeAngles.pitch, -80f, 80f ) );
-					//Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
-
-					if ( cam != null )
-					{
-						var cameraTransform = _camthing.RotateAround( EyePosition, EyeAngles.WithYaw( 0f ) );
-						var cameraPosition = Transform.Local.PointToWorld( cameraTransform.Position );
-						var cameraTrace = Scene.Trace.Ray( EyeWorldPosition, cameraPosition )
-							.Size( 5f )
-							.IgnoreGameObjectHierarchy( GameObject )
-							.WithoutTags( "player" )
-							.Run();
-
-						cam.Transform.Position = cameraTrace.EndPosition;
-						cam.Transform.LocalRotation = cameraTransform.Rotation;
-					}
-					*/
-				}
-				//}
+				Transform.Rotation = Quaternion.Lerp( Transform.Rotation, Quaternion.CreateFromYawPitchRoll( hit.Direction.x, hit.Direction.y, EyeAngles.yaw / 100 ), 1f );
+				controller.Velocity += Scene.PhysicsWorld.Gravity * Transform.Rotation / 10;
+				controller.Acceleration = 0;
+				var a = Input.AnalogMove * mcqueen * controller.Velocity;
+				controller.Accelerate( a );
+				Scene.PhysicsWorld.Step( 5 );
 			}
+			else
+			{
+				Scene.PhysicsWorld.Gravity = new Vector3( 0, 0, -850 );
+			}
+			//controller.Velocity = hit.Distance / 100 + Scene.PhysicsWorld.Gravity;
+			//Scene.PhysicsWorld.Gravity *= Transform.Rotation;
+			//}
+			/*else
+			{
+				controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
+				Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
+				EyeAngles += Input.AnalogMove;
+				/*EyeAngles = EyeAngles.WithPitch( MathX.Clamp( EyeAngles.pitch, -80f, 80f ) );
+				//Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
+
+				if ( cam != null )
+				{
+					var cameraTransform = _camthing.RotateAround( EyePosition, EyeAngles.WithYaw( 0f ) );
+					var cameraPosition = Transform.Local.PointToWorld( cameraTransform.Position );
+					var cameraTrace = Scene.Trace.Ray( EyeWorldPosition, cameraPosition )
+						.Size( 5f )
+						.IgnoreGameObjectHierarchy( GameObject )
+						.WithoutTags( "player" )
+						.Run();
+
+					cam.Transform.Position = cameraTrace.EndPosition;
+					cam.Transform.LocalRotation = cameraTransform.Rotation;
+				}
+				*/
+			//}
+			//}
 			if (!controller.IsOnGround)
 			{
 				Scene.PhysicsWorld.Gravity = new Vector3( 0, 0, -850 );
@@ -196,18 +213,29 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 	}
 	protected override void OnUpdate()
 	{
-		if ( mcqueen > 1500 )
+		if ( mcqueen >= 1500 )
 		{
 			GameObject go = runparticale.Clone( GameObject.Transform.Position, GameObject.Transform.Rotation );
+			go.Transform.Position = Transform.Position;
+			go.Transform.Rotation = Transform.Rotation;
+			aligned();
+		}
+		else
+		{
+			GameObject.Transform.Rotation = Rotation.FromYaw(EyeAngles.yaw);
 		}
 		if ( Input.Pressed( "Run" ) )
 		{
 			GameObject go = boomparticale.Clone( GameObject.Transform.Position, GameObject.Transform.Rotation );
+			for ( int i = 0; i < 5; i++ )
+			{
+				go.Transform.Position = Transform.Position;
+				go.Transform.Rotation = Transform.Rotation;
+			}
 		}
 		//if(mcqueen > 1000)
 		//{
 		//Log.Info( Scene.PhysicsWorld.Gravity );
-		aligned();
 		//}
 		//Log.Info( Scene.PhysicsWorld.Gravity);
 		//cam.Transform.Local = _camthing.RotateAround( EyePosition, EyeAngles.WithYaw(0f) );
@@ -256,9 +284,9 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 				cam.FieldOfView = 130;
 			}
 		}
-		
 		if ( controller.IsOnGround )
 		{
+			float fov = cam.FieldOfView;
 			controller.Acceleration = 10f;
 			controller.ApplyFriction( 5f );
 			if ( Input.Down( "Duck" ) )
@@ -266,6 +294,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 				//animation here
 				Anim.Components.Get<SkinnedModelRenderer>().Set( "b_ball", true );
 				movementenable = false;
+				fov = cam.FieldOfView;
 				cam.FieldOfView -= Time.Delta * 10;
 				if ( cam.FieldOfView < 30 )
 				{
@@ -274,6 +303,8 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 			}
 			else if ( Input.Released( "Duck" ) )
 			{
+				cam.FieldOfView = fov;
+
 				if ( controller == null ) return;
 
 				var wishVelocity = Vector3.Forward * Spin * Transform.Rotation;
@@ -307,7 +338,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 		}
 		else
 		{
-			Scene.TimeScale = 1f;
+			//Scene.TimeScale = 1f;
 		}
 
 	}
@@ -322,11 +353,11 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 			if ( controller == null ) return;
 
 			var wishSpeed = Input.Down( "Run" ) ? Run : Speed;
-			if(wishSpeed > 2000)
+			if ( wishSpeed > 2000 )
 			{
-				wishSpeed = 2000;
+				Time.Delta -= Time.Delta / 1000;
 			}
-			if(wishSpeed > 900)
+			if (wishSpeed > 900)
 			{
 				JumpHighet = 500;
 			}
