@@ -62,6 +62,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 	[Category( "IguessDebug" )]
 	[Property] float mcqueen;
 
+	Vector3 physic;
 
 	[Category( "Stats" )]
 	[Property]public float PunchStrength { get; set; } = 1f;
@@ -72,6 +73,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 	[Property]public Vector3 EyePosition { get; set; }
 	TimeSince _lastPunch;
 	Transform _camthing;
+	public float rotate;
 
 	public Vector3 EyeWorldPosition => Transform.Local.PointToWorld( EyePosition );
 	bool momentum;
@@ -101,7 +103,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 
 			//if ( controller.IsOnGround )
 			//{
-			Log.Info( hit.Direction );
+			Log.Info( hit.Distance );
 			//if ( hit.Distance <= 1200 )
 			//{
 			//Scene.PhysicsWorld.Gravity = new Vector3( 0, 0, -850 );
@@ -124,25 +126,46 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 			//controller.Velocity = hit.Direction * Vector3.Forward;
 
 
-			controller.IsOnGround = true;
-			Anim.IsGrounded = true;
-
-			if (controller.IsOnGround)
+			//controller.IsOnGround = true;
+			//Anim.IsGrounded = true;
+			if ( hit.Distance > 0.1f )
 			{
 				Transform.Rotation = Quaternion.Lerp( Transform.Rotation, Quaternion.CreateFromYawPitchRoll( hit.Direction.x, hit.Direction.y, EyeAngles.yaw / 100 ), 1f );
-				controller.Velocity += Scene.PhysicsWorld.Gravity * Transform.Rotation / 10;
-				controller.Acceleration = 0;
-				var a = Input.AnalogMove * mcqueen * controller.Velocity;
-				controller.Accelerate( a );
-				Scene.PhysicsWorld.Step( 5 );
 			}
 			else
 			{
-				Scene.PhysicsWorld.Gravity = new Vector3( 0, 0, -850 );
+				Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
 			}
-			//controller.Velocity = hit.Distance / 100 + Scene.PhysicsWorld.Gravity;
-			//Scene.PhysicsWorld.Gravity *= Transform.Rotation;
-			//}
+
+			if ( !controller.IsOnGround )
+			{
+				physic = new Vector3( 0, 0, -850 );
+				controller.Velocity += physic * Time.Delta;
+				Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
+			}
+			else
+			{
+				physic = new Vector3( Transform.Rotation.Pitch(), Transform.Rotation.Roll(), Transform.Rotation.Yaw() );
+				if ( hit.Distance > 0.1f )
+				{
+					controller.Velocity += physic * Transform.Rotation / 100;
+				}
+			}
+				//if (controller.IsOnGround)
+				//{
+				//	//controller.Velocity += Scene.PhysicsWorld.Gravity * Transform.Rotation / 10;
+				//	controller.Acceleration = 0;
+				//	var a = Input.AnalogMove * mcqueen * controller.Velocity;
+				//	controller.Accelerate( a );
+				//	Scene.PhysicsWorld.Step( 5 );
+				//}
+				//else
+				//{
+				//	Scene.PhysicsWorld.Gravity = new Vector3( 0, 0, -850 );
+				//}
+				//controller.Velocity = hit.Distance / 100 + Scene.PhysicsWorld.Gravity;
+				//Scene.PhysicsWorld.Gravity *= Transform.Rotation;
+				//}
 			/*else
 			{
 				controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
@@ -167,13 +190,6 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 				*/
 			//}
 			//}
-			if (!controller.IsOnGround)
-			{
-				Scene.PhysicsWorld.Gravity = new Vector3( 0, 0, -850 );
-				//controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
-				//Scene.PhysicsWorld.Gravity = 10f;
-				Transform.Rotation = Rotation.FromYaw(EyeAngles.yaw);
-			}
 			
 			//}
 
@@ -218,11 +234,10 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 			GameObject go = runparticale.Clone( GameObject.Transform.Position, GameObject.Transform.Rotation );
 			go.Transform.Position = Transform.Position;
 			go.Transform.Rotation = Transform.Rotation;
-			aligned();
 		}
 		else
 		{
-			GameObject.Transform.Rotation = Rotation.FromYaw(EyeAngles.yaw);
+			//GameObject.Transform.Rotation = Rotation.FromYaw(EyeAngles.yaw);
 		}
 		if ( Input.Pressed( "Run" ) )
 		{
@@ -233,6 +248,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 				go.Transform.Rotation = Transform.Rotation;
 			}
 		}
+		aligned();
 		//if(mcqueen > 1000)
 		//{
 		//Log.Info( Scene.PhysicsWorld.Gravity );
@@ -355,7 +371,16 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 			var wishSpeed = Input.Down( "Run" ) ? Run : Speed;
 			if ( wishSpeed > 2000 )
 			{
-				Time.Delta -= Time.Delta / 1000;
+				wishSpeed = 2000;
+				Scene.TimeScale -= Time.Delta / 10;
+				if(Scene.TimeScale < 0.4f)
+				{
+					Scene.TimeScale = 0.4f;
+				}
+			}
+			else
+			{
+				Scene.TimeScale = 1;
 			}
 			if (wishSpeed > 900)
 			{
@@ -418,7 +443,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 				}
 				//Scene.TimeScale = 0.7f;
 				controller.Acceleration = 5f;
-				controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
+				
 			}
 			controller.Move();
 			if ( Anim != null )
