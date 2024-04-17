@@ -8,7 +8,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MapInstance",
+          "__type": "Sandbox.MapInstance",
           "__guid": "09c67511-8dd1-40d7-8c28-009538b5846c",
           "MapName": "maps/teststage.vmap",
           "UseMapFromLaunch": false
@@ -24,7 +24,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "SkinnedModelRenderer",
+          "__type": "Sandbox.SkinnedModelRenderer",
           "__guid": "30c25047-7c8b-403d-a3f5-d234ccc9b1ca",
           "BodyGroups": 18446744073709551615,
           "CreateBoneObjects": false,
@@ -33,7 +33,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "CitizenAnimationHelper",
+          "__type": "Sandbox.Citizen.CitizenAnimationHelper",
           "__guid": "4d46bcf1-7b15-42fc-aeaa-6a8e54e843f0",
           "BodyWeight": 1,
           "EyesWeight": 1,
@@ -93,7 +93,7 @@
           "Rings": 0
         },
         {
-          "__type": "BoxCollider",
+          "__type": "Sandbox.BoxCollider",
           "__guid": "158058b3-e97e-4749-8ce5-c0d8bc5b2a3e",
           "Center": "0,0,33.69999",
           "IsTrigger": false,
@@ -106,7 +106,7 @@
           "Coins": 0
         },
         {
-          "__type": "CharacterController",
+          "__type": "Sandbox.CharacterController",
           "__guid": "2cc5129d-9eb0-439d-bc0d-d6e2fe5d0e80",
           "Acceleration": 10,
           "Bounciness": 0.3,
@@ -133,7 +133,7 @@
           "NetworkMode": 2,
           "Components": [
             {
-              "__type": "CameraComponent",
+              "__type": "Sandbox.CameraComponent",
               "__guid": "52f1d445-edf2-4601-9972-35cdc22b9bc3",
               "BackgroundColor": "0.33333,0.46275,0.52157,1",
               "ClearFlags": "All",
@@ -150,7 +150,7 @@
               "ZNear": 10
             },
             {
-              "__type": "Bloom",
+              "__type": "Sandbox.Bloom",
               "__guid": "e7405362-0839-472a-a108-58f027235783",
               "BloomColor": {
                 "color": [
@@ -179,7 +179,7 @@
               "ThresholdWidth": 0.5
             },
             {
-              "__type": "Tonemapping",
+              "__type": "Sandbox.Tonemapping",
               "__guid": "e93394cd-27b9-44b6-be5b-0516f4113028",
               "ExposureCompensation": 0,
               "MaximumExposure": 2,
@@ -187,7 +187,7 @@
               "Rate": 1
             },
             {
-              "__type": "Sharpen",
+              "__type": "Sandbox.Sharpen",
               "__guid": "1ba4b7c4-05c6-4053-8c1e-dcbe6034f2f8",
               "Scale": 0.2
             }
@@ -203,13 +203,13 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "SkyBox2D",
+          "__type": "Sandbox.SkyBox2D",
           "__guid": "940e853e-7722-4dc2-a225-6716c3e0b624",
           "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "EnvmapProbe",
+          "__type": "Sandbox.EnvmapProbe",
           "__guid": "0d659a77-cf88-4689-b589-480719d3ae10",
           "Texture": "textures/cubemaps/default2.vtex",
           "Bounds": {
@@ -238,7 +238,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "DirectionalLight",
+          "__type": "Sandbox.DirectionalLight",
           "__guid": "3dcbd595-a564-486b-84fd-8c442501c74a",
           "FogMode": "Enabled",
           "FogStrength": 1,
@@ -256,7 +256,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
           "__guid": "726eaad2-e239-4d78-a6d4-e0baa2404a71",
           "BodyGroups": 18446744073709551615,
           "Model": "models/dev/box.vmdl",
@@ -264,7 +264,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "Rigidbody",
+          "__type": "Sandbox.Rigidbody",
           "__guid": "d2211c0a-40d7-4bbf-acc6-09df99f765ed",
           "AngularDamping": 0,
           "Gravity": true,
@@ -276,7 +276,7 @@
           "StartAsleep": false
         },
         {
-          "__type": "BoxCollider",
+          "__type": "Sandbox.BoxCollider",
           "__guid": "36687f37-0fb1-4b3d-8f5b-9647e9437636",
           "Center": "0,0,0",
           "IsTrigger": false,
@@ -284,7 +284,7 @@
           "Static": false
         },
         {
-          "__type": "CharacterController",
+          "__type": "Sandbox.CharacterController",
           "__guid": "aa1c5c74-5d2e-4e4d-b6c9-527e919e5938",
           "Acceleration": 10,
           "Bounciness": 0.3,
@@ -315,7 +315,7 @@
           "NetworkMode": 2,
           "Components": [
             {
-              "__type": "CameraComponent",
+              "__type": "Sandbox.CameraComponent",
               "__guid": "f6c26ac1-27fa-4c0d-90de-409b75a046ad",
               "BackgroundColor": "0.33333,0.46275,0.52157,1",
               "ClearFlags": "All",
@@ -363,7 +363,7 @@
   },
   "Title": "test stage",
   "Description": "",
-  "LastSaved": "2024-04-08T18:57:30.6079273\u002B03:00",
+  "LastSaved": "2024-04-15T15:14:18.1112478\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

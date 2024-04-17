@@ -128,14 +128,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 
 			//controller.IsOnGround = true;
 			//Anim.IsGrounded = true;
-			if ( hit.Distance > 0.1f )
-			{
-				Transform.Rotation = Quaternion.Lerp( Transform.Rotation, Quaternion.CreateFromYawPitchRoll( hit.Direction.x, hit.Direction.y, EyeAngles.yaw / 100 ), 1f );
-			}
-			else
-			{
-				Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
-			}
+
 
 			if ( !controller.IsOnGround )
 			{
@@ -146,26 +139,34 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 			else
 			{
 				physic = new Vector3( Transform.Rotation.Pitch(), Transform.Rotation.Roll(), Transform.Rotation.Yaw() );
+				Transform.Rotation = Quaternion.Lerp( Transform.Rotation, Quaternion.CreateFromYawPitchRoll( hit.Direction.x, hit.Direction.y, EyeAngles.yaw / 100 ), 1f );
 				if ( hit.Distance > 0.1f )
 				{
 					controller.Velocity += physic * Transform.Rotation / 100;
 				}
+				else
+				{
+					Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
+					//Transform.Rotation = Quaternion.Lerp( Transform.Rotation, Quaternion.CreateFromYawPitchRoll( 0, 0, EyeAngles.yaw / 100 ), 1f );
+
+				}
 			}
-				//if (controller.IsOnGround)
-				//{
-				//	//controller.Velocity += Scene.PhysicsWorld.Gravity * Transform.Rotation / 10;
-				//	controller.Acceleration = 0;
-				//	var a = Input.AnalogMove * mcqueen * controller.Velocity;
-				//	controller.Accelerate( a );
-				//	Scene.PhysicsWorld.Step( 5 );
-				//}
-				//else
-				//{
-				//	Scene.PhysicsWorld.Gravity = new Vector3( 0, 0, -850 );
-				//}
-				//controller.Velocity = hit.Distance / 100 + Scene.PhysicsWorld.Gravity;
-				//Scene.PhysicsWorld.Gravity *= Transform.Rotation;
-				//}
+
+			//if (controller.IsOnGround)
+			//{
+			//	//controller.Velocity += Scene.PhysicsWorld.Gravity * Transform.Rotation / 10;
+			//	controller.Acceleration = 0;
+			//	var a = Input.AnalogMove * mcqueen * controller.Velocity;
+			//	controller.Accelerate( a );
+			//	Scene.PhysicsWorld.Step( 5 );
+			//}
+			//else
+			//{
+			//	Scene.PhysicsWorld.Gravity = new Vector3( 0, 0, -850 );
+			//}
+			//controller.Velocity = hit.Distance / 100 + Scene.PhysicsWorld.Gravity;
+			//Scene.PhysicsWorld.Gravity *= Transform.Rotation;
+			//}
 			/*else
 			{
 				controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
@@ -190,7 +191,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 				*/
 			//}
 			//}
-			
+
 			//}
 
 		}
