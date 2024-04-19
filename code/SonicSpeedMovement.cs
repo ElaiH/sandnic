@@ -467,7 +467,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 	public void Boosting()
 	{
 		Speed += Boost * 10;
-		cam.FieldOfView += Boost;
+		cam.FieldOfView += 10;
 		boomparticale.Clone( GameObject.Transform.Position );
 	}
 }

@@ -150,6 +150,7 @@
             {
               "__type": "Sandbox.Bloom",
               "__guid": "e7405362-0839-472a-a108-58f027235783",
+              "__enabled": false,
               "BloomColor": {
                 "color": [
                   {
@@ -178,6 +179,7 @@
             {
               "__type": "Sandbox.Tonemapping",
               "__guid": "e93394cd-27b9-44b6-be5b-0516f4113028",
+              "__enabled": false,
               "ExposureCompensation": 0,
               "MaximumExposure": 2,
               "MinimumExposure": 1,
@@ -186,6 +188,7 @@
             {
               "__type": "Sandbox.Sharpen",
               "__guid": "1ba4b7c4-05c6-4053-8c1e-dcbe6034f2f8",
+              "__enabled": false,
               "Scale": 0
             }
           ]
@@ -598,7 +601,7 @@
   },
   "Title": "test stage",
   "Description": "",
-  "LastSaved": "2024-04-19T13:47:48.7485802\u002B03:00",
+  "LastSaved": "2024-04-19T13:50:37.2696428\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
