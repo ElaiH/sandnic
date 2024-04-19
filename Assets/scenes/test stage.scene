@@ -74,10 +74,8 @@
           },
           "JumpHighet": 900,
           "mcqueen": 0,
-          "MinRun": 800,
           "MinSpeed": 250,
           "movementenable": false,
-          "Run": 800,
           "runparticale": {
             "_type": "gameobject",
             "prefab": "particles/spray.prefab"
@@ -600,7 +598,7 @@
   },
   "Title": "test stage",
   "Description": "",
-  "LastSaved": "2024-04-19T12:39:20.7267857\u002B03:00",
+  "LastSaved": "2024-04-19T13:47:48.7485802\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

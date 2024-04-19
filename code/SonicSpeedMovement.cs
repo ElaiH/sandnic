@@ -36,12 +36,6 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 	[Property] public float MinSpeed = 200;
 
 	[Category( "Stats" )]
-	[Property] public float Run = 800;
-
-	[Category( "Stats" )]
-	[Property] public float MinRun = 800;
-
-	[Category( "Stats" )]
 	[Property] public float JumpHighet = 900;
 
 	[Category( "Stats" )]
@@ -85,7 +79,6 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 	protected override void OnStart()
 	{
 		movementenable = true;
-		Run = MinRun;
 		_camthing = cam.Transform.Local;
 	}
 
@@ -272,13 +265,8 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 		{
 			//GameObject.Transform.Rotation = Rotation.FromYaw(EyeAngles.yaw);
 		}
-		if ( Input.Pressed( "Run" ) )
-		{
-			boomparticale.Clone( GameObject.Transform.Position );
-		}
 		if ( momentum )
 		{
-			Run += Time.Delta * 50;
 			Speed += Time.Delta * 50;
 			cam.FieldOfView += mcqueen / 100000;
 			if ( cam.FieldOfView > 140 )
@@ -286,12 +274,10 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 				cam.FieldOfView = 140;
 			}
 		}
-		Speed += Boost;
-		Run += Boost;
 		Boost -= Time.Delta * 10;
-		if(Boost < 0)
+		if(Boost < 20)
 		{
-			Boost = 0;
+			Boost = 20;
 		}
 		if ( controller.IsOnGround )
 		{
@@ -326,7 +312,6 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 
 				movementenable = true;
 				cam.FieldOfView = 90;
-				Run += 300;
 				Speed += 400;
 			}
 		}
@@ -361,7 +346,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 
 			if ( controller == null ) return;
 
-			var wishSpeed = Input.Down( "Run" ) ? Run : Speed;
+			var wishSpeed = Input.Down( "Run" ) ? Speed : Speed;
 			if ( wishSpeed > 2000 )
 			{
 				wishSpeed = 2000;
@@ -390,21 +375,14 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 			else
 			{
 				momentum = false;
-				Run = MinRun;
 				Speed = MinSpeed;
 				cam.FieldOfView = 90;
 			}
 			if(Input.Pressed("Run"))
 			{
-				cam.FieldOfView += 10;
-			}
-			else if ( Input.Released( "Run" ) )
-			{
-				cam.FieldOfView -= 10;
+				Bossting();
 			}
 			var wishVelocity = Input.AnalogMove * wishSpeed * Transform.Rotation;
-
-			float ogrunvalue = Run;
 
 			controller.Accelerate( wishVelocity );
 
@@ -485,5 +463,11 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 			}
 
 		_lastPunch = 0f;
+	}
+	public void Bossting()
+	{
+		Speed += Boost * 10;
+		cam.FieldOfView += Boost;
+		boomparticale.Clone( GameObject.Transform.Position );
 	}
 }
