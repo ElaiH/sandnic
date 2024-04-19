@@ -60,7 +60,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 	[Property] bool movementenable;
 
 	[Category( "IguessDebug" )]
-	[Property] float mcqueen;
+	[Property] public float mcqueen;
 
 	Vector3 physic;
 
@@ -92,7 +92,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 	public void aligned()
 	{
 		var hit = Scene.Trace
-			.FromTo( Transform.Position, Vector3.Forward)
+			.FromTo( Transform.Position, Vector3.Down)
 			.Size( 10f )
 			.WithoutTags( "player" )
 			.IgnoreGameObjectHierarchy( GameObject )
@@ -103,7 +103,8 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 
 			//if ( controller.IsOnGround )
 			//{
-			Log.Info( hit.Distance );
+			Log.Info( hit.Normal );
+			Transform.Rotation = Quaternion.Lerp( Transform.Rotation, Quaternion.CreateFromYawPitchRoll(hit.Normal.z, 0, EyeAngles.yaw / 50 ), 1f );
 			//if ( hit.Distance <= 1200 )
 			//{
 			//Scene.PhysicsWorld.Gravity = new Vector3( 0, 0, -850 );
@@ -130,26 +131,18 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 			//Anim.IsGrounded = true;
 
 
-			if ( !controller.IsOnGround )
+			/*if ( !controller.IsOnGround )
 			{
 				physic = new Vector3( 0, 0, -850 );
 				controller.Velocity += physic * Time.Delta;
-				Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
+				Transform.Rotation = Quaternion.Lerp( Transform.Rotation, Quaternion.CreateFromYawPitchRoll( 0, 0, EyeAngles.yaw / 50  ), 1f );
 			}
 			else
 			{
-				physic = new Vector3( Transform.Rotation.Pitch(), Transform.Rotation.Roll(), Transform.Rotation.Yaw() );
-				Transform.Rotation = Quaternion.Lerp( Transform.Rotation, Quaternion.CreateFromYawPitchRoll( hit.Direction.x, hit.Direction.y, EyeAngles.yaw / 100 ), 1f );
-				if ( hit.Distance > 0.1f )
-				{
-					controller.Velocity += physic * Transform.Rotation / 100;
-				}
-				else
-				{
-					Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
-					//Transform.Rotation = Quaternion.Lerp( Transform.Rotation, Quaternion.CreateFromYawPitchRoll( 0, 0, EyeAngles.yaw / 100 ), 1f );
-
-				}
+				//physic = new Vector3( Transform.Rotation.Pitch(), Transform.Rotation.Roll(), Transform.Rotation.Yaw() );
+				controller.Velocity += Scene.PhysicsWorld.Gravity * Transform.Rotation / 10;
+				Transform.Rotation = Quaternion.Lerp( Transform.Rotation, Quaternion.CreateFromYawPitchRoll( hit.Direction.x, hit.Direction.y, EyeAngles.yaw / 50), 1f );
+				controller.Velocity += physic * Transform.Rotation / 100;
 			}
 
 			//if (controller.IsOnGround)
@@ -230,26 +223,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 	}
 	protected override void OnUpdate()
 	{
-		if ( mcqueen >= 1500 )
-		{
-			GameObject go = runparticale.Clone( GameObject.Transform.Position, GameObject.Transform.Rotation );
-			go.Transform.Position = Transform.Position;
-			go.Transform.Rotation = Transform.Rotation;
-		}
-		else
-		{
-			//GameObject.Transform.Rotation = Rotation.FromYaw(EyeAngles.yaw);
-		}
-		if ( Input.Pressed( "Run" ) )
-		{
-			GameObject go = boomparticale.Clone( GameObject.Transform.Position, GameObject.Transform.Rotation );
-			for ( int i = 0; i < 5; i++ )
-			{
-				go.Transform.Position = Transform.Position;
-				go.Transform.Rotation = Transform.Rotation;
-			}
-		}
-		aligned();
+		//aligned();
 		//if(mcqueen > 1000)
 		//{
 		//Log.Info( Scene.PhysicsWorld.Gravity );
@@ -276,30 +250,48 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 			cam.Transform.LocalRotation = cameraTransform.Rotation;
 		}
 		*/
+		if (controller.IsOnGround && mcqueen > 255 )
+		{
+		EyeAngles += Input.AnalogMove;
 		EyeAngles += Input.AnalogLook;
-		//if (controller.IsOnGround && mcqueen > 255 )
-		//{
-		//EyeAngles += Input.AnalogMove;
-		//EyeAngles += Input.AnalogLook;
-		//Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
-		//aligned();
-		//}
-		//else
-		//{
-		//EyeAngles += Input.AnalogLook;
-		//Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
+		Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw);
+		}
+		else
+		{
+		EyeAngles += Input.AnalogLook;
+		Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw);
 		//cam.Transform.Local = _camthing.RotateAround( EyePosition, EyeAngles.WithRoll( 0f ) );
-		//}
+		}
+		//aligned();
 
+		if ( mcqueen >= 1500 )
+		{
+			runparticale.Clone( GameObject.Transform.Position, GameObject.Transform.Rotation );
+		}
+		else
+		{
+			//GameObject.Transform.Rotation = Rotation.FromYaw(EyeAngles.yaw);
+		}
+		if ( Input.Pressed( "Run" ) )
+		{
+			boomparticale.Clone( GameObject.Transform.Position );
+		}
 		if ( momentum )
 		{
 			Run += Time.Delta * 50;
 			Speed += Time.Delta * 50;
-			cam.FieldOfView += Time.Delta;
-			if ( cam.FieldOfView > 130 )
+			cam.FieldOfView += mcqueen / 100000;
+			if ( cam.FieldOfView > 140 )
 			{
-				cam.FieldOfView = 130;
+				cam.FieldOfView = 140;
 			}
+		}
+		Speed += Boost;
+		Run += Boost;
+		Boost -= Time.Delta * 10;
+		if(Boost < 0)
+		{
+			Boost = 0;
 		}
 		if ( controller.IsOnGround )
 		{
@@ -373,11 +365,11 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 			if ( wishSpeed > 2000 )
 			{
 				wishSpeed = 2000;
-				Scene.TimeScale -= Time.Delta / 10;
-				if(Scene.TimeScale < 0.4f)
-				{
-					Scene.TimeScale = 0.4f;
-				}
+				//Scene.TimeScale -= Time.Delta / 10;
+				//if(Scene.TimeScale < 0.4f)
+				//{
+				//	Scene.TimeScale = 0.4f;
+				//}
 			}
 			else
 			{
@@ -444,7 +436,8 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 				}
 				//Scene.TimeScale = 0.7f;
 				controller.Acceleration = 5f;
-				
+				controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
+
 			}
 			controller.Move();
 			if ( Anim != null )

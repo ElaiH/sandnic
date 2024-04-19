@@ -1,5 +1,5 @@
 {
-  "__guid": "f974696c-8acc-4d17-8842-751aac6ad4d8",
+  "__guid": "bef9f53a-1377-4a64-949e-1f3b00a50d13",
   "GameObjects": [
     {
       "__guid": "1ba56347-e803-4aa3-a8fb-bd8e920b858f",
@@ -127,8 +127,8 @@
         {
           "__guid": "af0bb7d0-d6d7-4d35-ae82-93f3770d2043",
           "Name": "Camera",
-          "Position": "-151.356,-10.99184,73.52535",
-          "Rotation": "0,0.1305262,0.000000000000001665335,0.9914449",
+          "Position": "-179.9643,-1.828817,77.90244",
+          "Rotation": "-0.0000000000000008881784,0.1305262,0.0000000000000000000001058791,0.9914449",
           "Enabled": true,
           "NetworkMode": 2,
           "Components": [
@@ -166,17 +166,16 @@
               },
               "BloomCurve": [
                 {
-                  "y": 0.5
+                  "y": 1
                 },
                 {
-                  "x": 1,
-                  "y": 1
+                  "x": 1
                 }
               ],
-              "Mode": "Additive",
+              "Mode": "Screen",
               "Strength": 0.5,
-              "Threshold": 0.5,
-              "ThresholdWidth": 0.5
+              "Threshold": 0.47,
+              "ThresholdWidth": 0.35
             },
             {
               "__type": "Sandbox.Tonemapping",
@@ -189,7 +188,7 @@
             {
               "__type": "Sandbox.Sharpen",
               "__guid": "1ba4b7c4-05c6-4053-8c1e-dcbe6034f2f8",
-              "Scale": 0.2
+              "Scale": 0
             }
           ]
         }
@@ -206,7 +205,7 @@
           "__type": "Sandbox.SkyBox2D",
           "__guid": "940e853e-7722-4dc2-a225-6716c3e0b624",
           "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
-          "Tint": "1,1,1,1"
+          "Tint": "0.53023,0.67116,1,1"
         },
         {
           "__type": "Sandbox.EnvmapProbe",
@@ -338,6 +337,244 @@
           ]
         }
       ]
+    },
+    {
+      "__guid": "364da907-5f7e-4a10-9aec-b45943de7d12",
+      "Name": "Rings",
+      "Position": "-660.9843,-58.26275,-33.19366",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "__guid": "926ce99b-738c-4834-a6fe-b62019e878f7",
+          "Name": "Rings",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Children": [
+            {
+              "__guid": "68e263ec-461b-42fd-8338-0b2cdb9c044a",
+              "Name": "Ring (1)",
+              "Position": "-75.93173,58.26275,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "8e2d3475-6710-4b6f-bfe5-cb0ec303adb1",
+              "Name": "Ring (1)",
+              "Position": "-75.93173,90.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "8482275a-6e0b-49b4-8b87-4d0796aac35c",
+              "Name": "Ring (1)",
+              "Position": "-75.93173,26.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "25a2be4a-f1c2-41a9-95ef-974c9e8b4c49",
+              "Name": "Ring",
+              "Position": "-107.9317,58.26275,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "ad497c08-fdab-4f54-b013-4ab3cf0e0c71",
+              "Name": "Ring",
+              "Position": "-107.9317,90.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "a0006307-f548-438b-978f-dda1f89bdf38",
+              "Name": "Ring",
+              "Position": "-107.9317,26.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "1b332867-7b88-449b-a303-e0fbf968e2db",
+              "Name": "Ring (2)",
+              "Position": "-43.93173,58.26275,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "2e9967e7-7eda-473e-89a0-7a36fbac6d9e",
+              "Name": "Ring (2)",
+              "Position": "-43.93173,90.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "c5fb3128-d4d4-49a8-9a47-e905bd202e26",
+              "Name": "Ring (2)",
+              "Position": "-43.93173,26.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "45b3540f-de2a-4137-a688-4edc1aee2e94",
+              "Name": "Ring (3)",
+              "Position": "-11.93173,58.26275,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "40a17c0d-b69b-440a-872c-e7178e7a1816",
+              "Name": "Ring (3)",
+              "Position": "-11.93173,90.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "88bd0f8d-6c2f-4514-821f-3fb4b9f7e391",
+              "Name": "Ring (3)",
+              "Position": "-11.93173,26.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "bfdf4a69-af83-4c1c-84f8-a692a102d913",
+              "Name": "Ring (4)",
+              "Position": "20.06827,58.26275,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "c28478e2-c6ff-48d6-b6cd-25efe6e289d7",
+              "Name": "Ring (4)",
+              "Position": "20.06827,90.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "e679219a-a667-4d2f-babf-5559bb28a889",
+              "Name": "Ring (4)",
+              "Position": "20.06827,26.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "c52aef70-39a0-4846-b326-380906773e37",
+              "Name": "Ring (5)",
+              "Position": "52.06827,58.26275,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "14cb83b5-61ae-412f-8ed0-54ce388f8616",
+              "Name": "Ring (5)",
+              "Position": "52.06827,90.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            },
+            {
+              "__guid": "fa623f4b-d3e3-4423-bfda-6cb0618fbf83",
+              "Name": "Ring (5)",
+              "Position": "52.06827,26.26276,67.19366",
+              "Scale": "1.5,1.5,1.5",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring.prefab"
+            }
+          ]
+        },
+        {
+          "__guid": "81ca4831-b791-4b4b-bc1f-3f8f11cc4e88",
+          "Name": "10",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Children": [
+            {
+              "__guid": "e404cf42-e239-439c-a16d-b75927611738",
+              "Name": "Ring(10)",
+              "Position": "-107.9317,-69.73724,67.19366",
+              "Scale": "2.085156,2.085156,2.085156",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring(10).prefab"
+            },
+            {
+              "__guid": "45b3399b-43aa-4364-98cb-612cc44f117b",
+              "Name": "Ring (10)",
+              "Position": "-75.93173,-69.73724,67.19366",
+              "Scale": "2.085156,2.085156,2.085156",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "__Prefab": "prefabs/ring(10).prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "48304105-6bcd-482a-bf1f-498664ba051d",
+      "Name": "Cube",
+      "Position": "-272.9696,0,4.680931",
+      "Scale": "0.3856466,5.830446,0.2129177",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "1ed6033c-ca44-4332-9f5f-1617ec328b3e",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "AddTrigger",
+          "__guid": "99703034-6ad2-46bb-befe-93769410ce40",
+          "Amount": 10
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "420c5a91-bd21-4f49-8b34-9bdbf5d53fe0",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -363,7 +600,7 @@
   },
   "Title": "test stage",
   "Description": "",
-  "LastSaved": "2024-04-15T15:14:18.1112478\u002B03:00",
+  "LastSaved": "2024-04-19T12:39:20.7267857\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

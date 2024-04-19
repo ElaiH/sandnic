@@ -9,11 +9,7 @@
       "Ident": "teststage",
       "Tags": null,
       "Schema": 0,
-      "HasAssets": false,
-      "AssetsPath": null,
       "Resources": null,
-      "HasCode": false,
-      "CodePath": null,
       "PackageReferences": [],
       "EditorReferences": [],
       "Metadata": {
