@@ -11,7 +11,7 @@ public sealed class AddTrigger : Component, Component.ITriggerListener
 		{
 			player.Boost += Amount;
 			player.Boost = Math.Clamp( player.Boost, 0, player.MaxBoost );
-			player.Bossting();
+			player.Boosting();
 		}
 	}
 

@@ -380,7 +380,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 			}
 			if(Input.Pressed("Run"))
 			{
-				Bossting();
+				Boosting();
 			}
 			var wishVelocity = Input.AnalogMove * wishSpeed * Transform.Rotation;
 
@@ -464,7 +464,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 
 		_lastPunch = 0f;
 	}
-	public void Bossting()
+	public void Boosting()
 	{
 		Speed += Boost * 10;
 		cam.FieldOfView += Boost;
