@@ -1,0 +1,55 @@
+{
+  "RootObject": {
+    "__guid": "edcb0956-0e3b-4ae6-9d9d-4ec57646af1e",
+    "Name": "coinphys",
+    "Scale": "1.5,1.5,1.5",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "6a0149ed-b637-4980-8c69-c4f2e833e0c4",
+        "BodyGroups": 18446744073709551615,
+        "Model": "bochonok/models/ring.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Ring",
+        "__guid": "c415292c-413e-45fd-be2f-c9c497fcab48",
+        "BoostAmount": 10,
+        "RingAmount": 1,
+        "SpinAngles": "0,400,0"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "90691bac-1578-42ca-9ee1-49286ca1d71f",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Scale": "3.300018,18.2,17.10002",
+        "Static": false
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "2e6c549e-bead-42b0-b127-b097df8b2b07",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "greg.ring"
+  ]
+}

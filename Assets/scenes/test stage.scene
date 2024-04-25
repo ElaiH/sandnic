@@ -58,7 +58,7 @@
           },
           "boomparticale": {
             "_type": "gameobject",
-            "prefab": "particles/burst.prefab"
+            "prefab": "prefabs/burst.prefab"
           },
           "cam": {
             "_type": "component",
@@ -78,7 +78,7 @@
           "movementenable": false,
           "runparticale": {
             "_type": "gameobject",
-            "prefab": "particles/spray.prefab"
+            "prefab": "prefabs/spray.prefab"
           },
           "Speed": 250,
           "Spin": 300000,
@@ -93,9 +93,9 @@
         {
           "__type": "Sandbox.BoxCollider",
           "__guid": "158058b3-e97e-4749-8ce5-c0d8bc5b2a3e",
-          "Center": "0,0,33.69999",
+          "Center": "0,0,32.69999",
           "IsTrigger": false,
-          "Scale": "12.29999,16.40001,70.20003",
+          "Scale": "21.49999,16.40001,49.90004",
           "Static": false
         },
         {
@@ -125,7 +125,7 @@
         {
           "__guid": "af0bb7d0-d6d7-4d35-ae82-93f3770d2043",
           "Name": "Camera",
-          "Position": "-179.9643,-1.828817,77.90244",
+          "Position": "-191.3029,-1.828818,90.73512",
           "Rotation": "-0.0000000000000008881784,0.1305262,0.0000000000000000000001058791,0.9914449",
           "Enabled": true,
           "NetworkMode": 2,
@@ -190,6 +190,52 @@
               "__guid": "1ba4b7c4-05c6-4053-8c1e-dcbe6034f2f8",
               "__enabled": false,
               "Scale": 0
+            },
+            {
+              "__type": "Sandbox.ScreenPanel",
+              "__guid": "b0dbe5ed-c980-4fc8-8b47-68fe2a5f0dff",
+              "AutoScreenScale": true,
+              "Opacity": 1,
+              "Scale": 1,
+              "ZIndex": 100
+            },
+            {
+              "__type": "SonicHud",
+              "__guid": "a14d4494-d4c7-46d6-8330-d46953c65668",
+              "Sonic": {
+                "_type": "component",
+                "component_id": "0f013e09-bafe-47ea-bcb8-b646f1c54e55",
+                "go": "a8968f22-9f2c-48cc-81a8-4b7781151cc6",
+                "component_type": "SonicSpeedMovement"
+              }
+            }
+          ]
+        },
+        {
+          "__guid": "ed47fd74-bd30-4b5e-91f0-a59a9d432550",
+          "Name": "Cube",
+          "Position": "3.107823,-0.0000000000106013,1.040169",
+          "Scale": "0.4205337,0.3548487,0.03306657",
+          "Tags": "hiting",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "1e1e64be-2949-46ac-b895-b32ce1ac183b",
+              "__enabled": false,
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "96a7acad-7b04-443a-b675-93cc369817a9",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
             }
           ]
         }
@@ -205,7 +251,7 @@
         {
           "__type": "Sandbox.SkyBox2D",
           "__guid": "940e853e-7722-4dc2-a225-6716c3e0b624",
-          "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
+          "SkyMaterial": "materials/error.vmat",
           "Tint": "0.53023,0.67116,1,1"
         },
         {
@@ -576,6 +622,78 @@
           "Static": false
         }
       ]
+    },
+    {
+      "__guid": "59017601-c2fd-42af-8aeb-1b3309c2b1c4",
+      "Name": "Enemy",
+      "Position": "-572.556,442.5503,24.7217",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "__guid": "c1e27cd6-0b96-4526-91f9-eec46dcdd00b",
+          "Name": "Cube",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "bc9927c4-8526-4b31-bea0-448f5db48956",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "478fe2c2-42b4-4e7c-b9dd-af682eff02d8",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "Enemy",
+              "__guid": "a8698fc9-bc0e-455a-988c-34601e8b6a01",
+              "Coin": {
+                "_type": "gameobject",
+                "prefab": "prefabs/ring.prefab"
+              }
+            }
+          ]
+        },
+        {
+          "__guid": "f4c30f13-dfbf-46b8-aede-63120188c2e7",
+          "Name": "Cube",
+          "Position": "0,0,25.67965",
+          "Scale": "1,1,0.02871345",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "987bc621-c4b6-43bd-8359-a803da8130bf",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "975b4bfc-4d48-4537-a5ff-fb12279ceaad",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "Enemyhit",
+              "__guid": "8e2242e9-6dfc-4921-8a4e-487396851217"
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -601,7 +719,7 @@
   },
   "Title": "test stage",
   "Description": "",
-  "LastSaved": "2024-04-19T19:09:46.749548\u002B03:00",
+  "LastSaved": "2024-04-25T13:30:07.3322961\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

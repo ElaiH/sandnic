@@ -70,7 +70,7 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 	public float rotate;
 
 	public Vector3 EyeWorldPosition => Transform.Local.PointToWorld( EyePosition );
-	bool momentum;
+	public bool momentum;
 
 	//CamStuff
 	[Sync]
@@ -268,10 +268,10 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 		if ( momentum )
 		{
 			Speed += Time.Delta * 50;
-			cam.FieldOfView += mcqueen / 100000;
-			if ( cam.FieldOfView > 140 )
+			cam.FieldOfView += mcqueen / 10000;
+			if ( cam.FieldOfView > 130 )
 			{
-				cam.FieldOfView = 140;
+				cam.FieldOfView = 130;
 			}
 		}
 		Boost -= Time.Delta * 10;
@@ -362,11 +362,11 @@ public sealed class SonicSpeedMovement : Component, Component.ICollisionListener
 			}
 			if (wishSpeed > 900)
 			{
-				JumpHighet = 500;
+				JumpHighet = 300;
 			}
 			else if(wishSpeed < 900)
 			{
-				JumpHighet = 900;
+				JumpHighet = 500;
 			}
 			if( Input.AnalogMove != 0 )
 			{
